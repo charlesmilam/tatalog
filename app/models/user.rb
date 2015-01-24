@@ -1,4 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :faves
-  has_many :tattoos, through :faves 
+  has_many :favorites
+  has_many :tattoos, through: :favorites 
 end
