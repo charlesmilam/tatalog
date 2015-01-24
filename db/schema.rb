@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150124185320) do
+ActiveRecord::Schema.define(version: 20150124192434) do
+
+  create_table "faves", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "tattoo_id"
+    t.boolean  "fave"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "faves", ["tattoo_id"], name: "index_faves_on_tattoo_id"
+  add_index "faves", ["user_id"], name: "index_faves_on_user_id"
 
   create_table "tattoos", force: true do |t|
     t.integer  "user_id"
