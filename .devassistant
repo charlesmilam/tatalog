@@ -1,0 +1,18 @@
+dependencies:
+- rpm:
+  - /usr/bin/ruby
+- rpm:
+  - rubygem(rails)
+  - rubygem(sqlite3)
+  - rubygem(jquery-rails)
+  - rubygem(coffee-rails)
+  - rubygem(sass-rails)
+  - rubygem(uglifier)
+  - rubygem(therubyracer)
+devassistant_version: 0.9.3
+original_kwargs:
+  github: !!python/unicode 'CharlesMilam'
+  name: !!python/unicode '/home/scruffy/git/tatalog'
+project_type:
+- ruby
+- rails
