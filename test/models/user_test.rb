@@ -18,4 +18,12 @@ class UserTest < ActiveSupport::TestCase
     user.email = "test1@example.com"
     assert_not user.save, "Saved the user without a password"
   end
+
+  test "should save a user" do
+    user = User.new
+    user.user_name = "test#{rand 100..200}"
+    user.email = "#{user.user_name}@example.com"
+    user.password = "abc123"
+    assert user.save, "User was not saved"
+  end
 end
