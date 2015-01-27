@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150126044226) do
+ActiveRecord::Schema.define(version: 20150127021114) do
 
   create_table "artists", force: true do |t|
     t.string   "first_name"
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 20150126044226) do
     t.string   "city"
     t.string   "state"
     t.string   "zip"
+    t.string   "url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tattoo_pics", force: true do |t|
+    t.integer  "tattoo_id"
+    t.string   "description"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
