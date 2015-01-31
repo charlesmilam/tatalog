@@ -15,17 +15,17 @@
 # t.datetime "updated_at"
 
 tattoo1: 
-  name: "tattoo 1"
-  when: "2010-03-09"
-  why: "reason for tattoo 1"
+  name: tattoo 1
+  when: 2010-03-09
+  why: reason for tattoo 1
 
 tattoo2: 
-  name: "tattoo 2"
-  when: "1994-12-28"
-  why: "reason for tattoo 2"
+  name: tattoo 2
+  when: 1994-12-28
+  why: reason for tattoo 2
 
 tattoo3: 
-  name: "tattoo 3"
-  when: "1999-03-20"
-  why: "reason for tattoo 3"
+  name: tattoo 3
+  when: 1999-03-20
+  why: reason for tattoo 3
 
