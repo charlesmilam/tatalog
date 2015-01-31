@@ -3,9 +3,37 @@
 # This model initially had no columns defined.  If you add columns to the
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+
+# ***************** Shops Table Schema *************
+# t.string   "name"
+# t.string   "address"
+# t.string   "city"
+# t.string   "state"
+# t.string   "zip"
+# t.string   "url"
+# t.datetime "created_at"
+# t.datetime "updated_at"
+
+shop1:
+  name: "Test Shop 1"
+  address: "123 Main Street"
+  city: "Austin"
+  state: "TX"
+  zip: "78704"
+  url: "http://example.com/shop1"
+
+shop2:
+  name: "Test Shop 2"
+  address: "345 Chestnut Street"
+  city: "Beverly Hills"
+  state: "CA"
+  zip: "90210"
+  url: "http://example.com/shop2"
+
+shop1:
+  name: "Test Shop 3"
+  address: "678 Hill Avenue"
+  city: "Boston"
+  state: "MA"
+  zip: "01234"
+  url: "http://example.com/shop3"
