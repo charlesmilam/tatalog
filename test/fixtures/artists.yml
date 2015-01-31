@@ -4,8 +4,34 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+
+# *********** Artists Table Schema ***********
+# t.string   "first_name"
+# t.string   "last_name"
+# t.string   "nick"
+# t.string   "email"
+# t.integer  "shop_id"
+# t.string   "url"
+# t.datetime "created_at"
+# t.datetime "updated_at"
+
+artist1:
+  first_name: "Test1"
+  last_name: "Artist1"
+  nick: "TesterArt 1"
+  email: "test1.artist1@example.com"
+  url: "http://example.com/testartist1"
+
+artist2:
+  first_name: "Test2"
+  last_name: "Artist2
+  nick: "TesterArt 2"
+  email: "test2.artist2@example.com"
+  url: "http://example.com/testartist2"
+
+artist1:
+  first_name: "Test3"
+  last_name: "Artist3"
+  nick: "TesterArt 3"
+  email: "test3.artist3@example.com"
+  url: "http://example.com/testartist3"  

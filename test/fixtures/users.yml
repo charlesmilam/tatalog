@@ -13,16 +13,16 @@
 # t.datetime "updated_at"
 
 user1:
-  user_name: "Tester 1",
-  email: "tester1@email.com",
+  user_name: "Tester 1"
+  email: "tester1@email.com"
   password: "abc123"
 
 user2:
-  user_name: "Tester 2",
-  email: "tester2@email.com",
+  user_name: "Tester 2"
+  email: "tester2@email.com"
   password: "abc123"
 
 user3:
-  user_name: "Tester 3",
-  email: "tester3@email.com",
+  user_name: "Tester 3"
+  email: "tester3@email.com"
   password: "abc123"  
