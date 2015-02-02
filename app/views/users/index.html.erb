@@ -3,11 +3,9 @@
 <div id="users-list">
   <ul>
     <% @users.each do |user| %>
-    <li> <%= user.user_name %> </li>
+      <li> <%= user.user_name %> </li>
     <% end %>
   </ul>
 </div>
 
-<div id="bottom-nav">
-<%= link_to("Back Home", root_path) %>
-</div>
+<%= render "btmlinks" %>
