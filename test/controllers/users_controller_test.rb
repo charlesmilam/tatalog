@@ -1,14 +1,25 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
+  setup do
+    @user = users(:user1)
+    @user.save
+  end
+
+  teardown do
+    @user = nil
+  end
+
   test "should get index" do
     get :index
     assert_response :success
+    assert_not_nil assigns(:users), "@users is nil"
   end
 
   test "should get show" do
-    get :show
+    get(:show, {"id" => @user.id}, nil)
     assert_response :success
+    assert_not_nil assigns(:user), "@user is nil"
   end
 
   test "should get new" do
@@ -22,18 +33,21 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit
+    get(:edit, {"id" => @user.id}, nil)
     assert_response :success
+    assert_not_nil assigns(:user), "@user is nil"
   end
 
   test "should get update" do
-    get :update
+    get(:update, {"id" => @user.id}, nil)
     assert_response :success
+    assert_not_nil assigns(:user), "@user is nil"
   end
 
   test "should get destroy" do
-    get :destroy
+    get(:destroy, {"id" => @user.id}, nil)
     assert_response :success
+    assert_not_nil assigns(:user), "@user is nil"
   end
 
 end
