@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root "pages#home"
 
-  routes users
+  resources users
 
   get 'pages/help'
 
