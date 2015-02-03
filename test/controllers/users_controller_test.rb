@@ -4,6 +4,12 @@ class UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:user1)
     @user.save
+
+    @params = {
+        user_name: "tester1",
+        email: "tester1@test.com",
+        password: "abc123"
+    }
   end
 
   teardown do
@@ -17,37 +23,47 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get(:show, {"id" => @user.id}, nil)
+    get(:show, {id: @user.id}, nil)
     assert_response :success
     assert_not_nil assigns(:user), "@user is nil"
   end
 
   test "should get new" do
     get :new
+
+    user = assigns(:user)
+
+    assert user.new_record?
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
-    assert_response :success
+  # test "should get create" do
+  #   get :create, user: @params
+  #   assert_response :success
+  # end
+
+  test "should create new user" do
+    post :create, user: @params
+    #assert_redirected_to user_url
+    assert_response :redirect
   end
 
   test "should get edit" do
-    get(:edit, {"id" => @user.id}, nil)
+    get(:edit, {id: @user.id}, nil)
     assert_response :success
     assert_not_nil assigns(:user), "@user is nil"
   end
 
-  test "should get update" do
-    get(:update, {"id" => @user.id}, nil)
+  test "should update user" do
+    post :update, user: {id: @user.id}
+    #assert_redirected_to user_url
     assert_response :success
     assert_not_nil assigns(:user), "@user is nil"
   end
 
   test "should get destroy" do
-    get(:destroy, {"id" => @user.id}, nil)
-    assert_response :success
+    get(:destroy, {id: @user.id}, nil)
+    assert_redirected_to users_url
     assert_not_nil assigns(:user), "@user is nil"
   end
-
 end
