@@ -16,17 +16,17 @@
 
   <div class="field">
     <%= f.label :user_name %><br>
-    <%= f.text_field :user_name %>
+    <%= f.text_field :user_name, placeholder: "User Name" %><br>
   </div>
   <div class="field">
     <%= f.label :email %><br>
-    <%= f.text_field :email %><br>
+    <%= f.text_field :email, placeholder: "email@example.com" %><br>
   </div>
   <div class="field">
     <%= f.label :password %><br>
-    <%= f.password_field :password %><br>
+    <%= f.password_field :password, placeholder: "password" %><br>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <br><%= f.submit %>
   </div>
 <% end %>
