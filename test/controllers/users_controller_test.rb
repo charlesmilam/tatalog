@@ -1,6 +1,15 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
+  # *********** Stuff available after a valid request ************
+  # puts "assigns", assigns
+  # puts "cookies", cookies
+  # puts "flash", flash
+  # puts "session", session
+  # puts "controller", @controller
+  # puts "request", @request
+  # puts "response", @response.@status
+
   setup do
     @user = users(:user1)
     @user.save
@@ -39,14 +48,16 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  # test "should get create" do
-  #   get :create, user: @params
-  #   assert_response :success
-  # end
+  test "should get create" do
+    get :create, user: @params
+    puts "user get", @response
+    assert_response :success
+  end
 
   test "should create new user" do
     post :create, @params
-    #assert_redirected_to user_url
+    puts "create new user", @assigns
+    assert_redirected_to user_url(@assigns["user"].id)
     assert_response :redirect
   end
 
@@ -56,12 +67,10 @@ class UsersControllerTest < ActionController::TestCase
     assert_not_nil assigns(:user), "@user is nil"
   end
 
-  # test "should update user" do
-  #   put :update, @user, user_name: "New"
-  #   #assert_redirected_to user_url
-  #   assert_response :success
-  #   assert_not_nil assigns(:user), "@user is nil"
-  # end
+  test "should update user" do
+    put :update, id: @user.id, user: {email: "new.email@new.com"}
+    assert_redirected_to user_url(@assigns["user"].id)
+  end
 
   test "should get destroy" do
     get(:destroy, {id: @user.id}, nil)
