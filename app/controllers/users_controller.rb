@@ -35,6 +35,7 @@ class UsersController < ApplicationController
 
   def update
     respond_to do |format|
+      puts "update", user_params
       if @user.update(user_params)
         format.html {redirect_to @user, notice: "User was successfuly updated."}
       else
