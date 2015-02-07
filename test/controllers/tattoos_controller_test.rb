@@ -57,8 +57,8 @@ class TattoosControllerTest < ActionController::TestCase
   end
 
   test "should update tattoo" do
-    get :update
-    assert_response :success
+    put :update, user_id: @user.id, id: @tattoo.id, tattoo: @params     
+    assert_redirected_to user_tattoo_path(id: @assigns["tattoo"][:id])
   end
 
   test "should delete tattoo" do
