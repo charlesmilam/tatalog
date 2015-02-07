@@ -12,10 +12,14 @@ class TattoosControllerTest < ActionController::TestCase
 
   setup do
     @user = users(:user1)
+    @tattoo = tattoos(:tattoo1)
 
     @params = {
       tattoo: {
-        user_id: @user.id
+        user_id: @user.id,
+        name: @tattoo.name,
+        when: @tattoo.when,
+        why: @tattoo.why,
       }
     }
   end
@@ -26,22 +30,23 @@ class TattoosControllerTest < ActionController::TestCase
   
   test "should get index" do
     get :index, user_id: @user.id
-    puts @response, @assigns
+    
     assert_response :success
   end
 
   test "should get show" do
-    get :show, user_id: @user.id
+    get :show, user_id: @user.id, id: @tattoo.id
+    puts @response, @assigns
     assert_response :success
   end
 
   test "should get new" do
-    get :new
+    get :new, user_id: @user.id
     assert_response :success
   end
 
   test "should get create" do
-    get :create
+    get :create, @params
     assert_response :success
   end
 
