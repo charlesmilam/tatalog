@@ -9,29 +9,50 @@ class TattoosControllerTest < ActionController::TestCase
   # puts "controller", @controller
   # puts "request", @request
   # puts "response", @response.@status
+
+  setup do
+    @user = users(:user1)
+    @tattoo = tattoos(:tattoo1)
+    @artist = artists(:artist1)
+    @shop = shops(:shop1)
+
+    @params = {
+        user_id: @user.id,
+        artist_id: @artist.id,
+        shop_id: @shop.id,
+        name: @tattoo.name,
+        when: @tattoo.when,
+        why: @tattoo.why
+      }
+  end
+
+  teardown do
+    @user = nil
+  end
   
   test "should get index" do
-    get :index
+    get :index, user_id: @user.id
+    
     assert_response :success
   end
 
   test "should get show" do
-    get :show
+    get :show, user_id: @user.id, id: @tattoo.id
     assert_response :success
   end
 
   test "should get new" do
-    get :new
+    get :new, user_id: @user.id
     assert_response :success
   end
 
   test "should get create" do
-    get :create
-    assert_response :success
+    post :create, user_id: @user.id, tattoo: @params     
+    assert_redirected_to user_tattoo_path(id: @assigns["tattoo"][:id])
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, id: @tattoo.id
     assert_response :success
   end
 
