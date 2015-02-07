@@ -13,15 +13,17 @@ class TattoosControllerTest < ActionController::TestCase
   setup do
     @user = users(:user1)
     @tattoo = tattoos(:tattoo1)
+    @artist = artists(:artist1)
+    @shop = shops(:shop1)
 
     @params = {
-      tattoo: {
         user_id: @user.id,
+        artist_id: @artist.id,
+        shop_id: @shop.id,
         name: @tattoo.name,
         when: @tattoo.when,
-        why: @tattoo.why,
+        why: @tattoo.why
       }
-    }
   end
 
   teardown do
@@ -36,7 +38,7 @@ class TattoosControllerTest < ActionController::TestCase
 
   test "should get show" do
     get :show, user_id: @user.id, id: @tattoo.id
-    puts @response, @assigns
+    #puts @response, @assigns
     assert_response :success
   end
 
@@ -46,12 +48,15 @@ class TattoosControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    get :create, @params
-    assert_response :success
+    post :create, user_id: @user.id, tattoo: @params #user_id: @user.id, id: @tattoo.id
+    puts "responses", @response
+    puts "assigns", @assigns["tattoo"][:id]
+    #assert :success        
+    assert_redirected_to user_tattoo_path(id: @assigns["tattoo"][:id])
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, id: @tattoo.id
     assert_response :success
   end
 
