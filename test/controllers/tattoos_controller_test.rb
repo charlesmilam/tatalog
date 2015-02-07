@@ -38,7 +38,6 @@ class TattoosControllerTest < ActionController::TestCase
 
   test "should get show" do
     get :show, user_id: @user.id, id: @tattoo.id
-    #puts @response, @assigns
     assert_response :success
   end
 
@@ -48,10 +47,7 @@ class TattoosControllerTest < ActionController::TestCase
   end
 
   test "should get create" do
-    post :create, user_id: @user.id, tattoo: @params #user_id: @user.id, id: @tattoo.id
-    puts "responses", @response
-    puts "assigns", @assigns["tattoo"][:id]
-    #assert :success        
+    post :create, user_id: @user.id, tattoo: @params     
     assert_redirected_to user_tattoo_path(id: @assigns["tattoo"][:id])
   end
 
