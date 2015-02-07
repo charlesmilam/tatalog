@@ -41,7 +41,8 @@ class TattoosController < ApplicationController
 
   def update
     respond_to do |format|
-      if @tattoo = @user.tattoos.update(@user.tattoos, tattoo_params)
+      puts "user tattoos", @user.tattoos.find_by(@tattoo.id)
+      if @tattoo.update(tattoo_params)
         format.html {redirect_to user_tattoo_path(id: @tattoo[:id]), notice: "Tattoo sucessfully updated."}
       else
         format.html {render action: "new"}
