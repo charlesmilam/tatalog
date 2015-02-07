@@ -46,7 +46,7 @@ class TattoosController < ApplicationController
     @tattoo.destroy
 
     respond_to do |format|
-      format.html {redirect_to tattoos_url}
+      format.html {redirect_to user_tattoos_path}
     end
   end
 
