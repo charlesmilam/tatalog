@@ -1,4 +1,6 @@
+@import "palette.sass";
+
 body {
-  color: #cccccc;
-  background-color: #000;
+  color: $primaryTextColor;
+  background-color: $textPrimaryColor;
 }

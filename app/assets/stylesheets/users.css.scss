@@ -1,7 +1,9 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "palette.sass";
+
 body {
-  color: #cccccc;
-  background-color: #000;
+  color: $primaryTextColor;
+  background-color: $textPrimaryColor;
 }

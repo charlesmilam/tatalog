@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "pages#home"
 
-  resources :users
+  resources :users do
+    resources :tattoos
+  end
 
   get 'pages/help'
 
