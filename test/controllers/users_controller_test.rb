@@ -12,7 +12,6 @@ class UsersControllerTest < ActionController::TestCase
 
   setup do
     @user = users(:user1)
-    @user.save
 
     @params = {
       user:{

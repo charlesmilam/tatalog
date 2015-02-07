@@ -1,5 +1,6 @@
 class TattoosController < ApplicationController
   def index
+    @tattoos = Tattoo.all
   end
 
   def show
@@ -18,5 +19,10 @@ class TattoosController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def tattoo_params
+    params.require(:tattoo) .permit(:user_id)
   end
 end
