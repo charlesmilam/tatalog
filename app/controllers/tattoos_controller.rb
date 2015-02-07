@@ -40,13 +40,21 @@ class TattoosController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      puts "user tattoos", @user.tattoos.find_by(@tattoo.id)
+      if @tattoo.update(tattoo_params)
+        format.html {redirect_to user_tattoo_path(id: @tattoo[:id]), notice: "Tattoo sucessfully updated."}
+      else
+        format.html {render action: "new"}
+      end
+    end
   end
 
   def destroy
     @tattoo.destroy
 
     respond_to do |format|
-      format.html {redirect_to tattoos_url}
+      format.html {redirect_to user_tattoos_path}
     end
   end
 
