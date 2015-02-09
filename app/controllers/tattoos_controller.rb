@@ -29,11 +29,20 @@ class TattoosController < ApplicationController
   end
 
   def create
-    if @user.tattoos.create(tattoo_params)
+    tattoo = @user.tattoos.new(tattoo_params)
+
+    if tattoo.save
       redirect_to user_tattoos_path, notice: "Tattoo sucessfully created."
     else
       render action: "new"
-    end
+    end      
+
+    #the following does not error, but no record created
+    # if @user.tattoos.create(tattoo_params)
+    #   redirect_to user_tattoos_path, notice: "Tattoo sucessfully created."
+    # else
+    #   render action: "new"
+    # end
   end
 
   def edit
