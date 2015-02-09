@@ -17,6 +17,7 @@ class TattoosControllerTest < ActionController::TestCase
     @shop = shops(:shop1)
 
     @params = {
+        id: @tattoo.id,
         user_id: @user.id,
         artist_id: @artist.id,
         shop_id: @shop.id,
@@ -48,7 +49,7 @@ class TattoosControllerTest < ActionController::TestCase
 
   test "should create tattoo" do
     post :create, user_id: @user.id, tattoo: @params     
-    assert_redirected_to user_tattoo_path(id: @assigns["tattoo"][:id])
+    assert_redirected_to user_tattoos_path
   end
 
   test "should get edit" do
