@@ -1,23 +1,11 @@
 Rails.application.routes.draw do
-  get 'shops/index'
-
-  get 'shops/show'
-
-  get 'shops/new'
-
-  get 'shops/create'
-
-  get 'shops/edit'
-
-  get 'shops/update'
-
-  get 'shops/destroy'
-
   root "pages#home"
 
   resources :users do
     resources :tattoos
   end
+
+  resources :shops
 
   get 'pages/help'
 

@@ -48,7 +48,7 @@ class ShopsControllerTest < ActionController::TestCase
 
   test "should create new shop" do
     post :create, shop: @params
-    assert_redirected_to shops_show_path
+    assert_redirected_to shop_path(@shop.id)
   end
 
   test "should get edit" do
@@ -58,12 +58,12 @@ class ShopsControllerTest < ActionController::TestCase
 
   test "should update shop" do
     put :update, id: @shop.id, shop: {name: "New Cool Tat Shop Name"}
-    assert_redirected_to shops_show_path
+    assert_redirected_to shop_path(@shop.id)
   end
 
   test "should delete shop" do
     delete :destroy, id: @shop.id
-    assert_redirected_to shops_index_path
+    assert_redirected_to shops_path
   end
 
 end
