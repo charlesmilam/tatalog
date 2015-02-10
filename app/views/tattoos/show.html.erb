@@ -1,2 +1,7 @@
-<h1>Tattoos#show</h1>
-<p>Find me in app/views/tattoos/show.html.erb</p>
+<h1><%= @tattoo.name %></h1>
+<div class="tattoo-show">
+  <label><%= @tattoo.artist_id %></label><br>
+  <label><%= @tattoo.shop_id %></label><br>
+  <label><%= @tattoo.when %></label><br>
+  <label><%= @tattoo.why %></label>
+</div>
