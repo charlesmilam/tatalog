@@ -19,6 +19,15 @@ class ShopsController < ApplicationController
   end
 
   def create
+    @shop = Shop.new(shop_params)
+
+    respond_to do |format|
+      if @shop.save
+        format.html {redirect_to shops_show_path, notice: "Shop created successfuly."}
+      else
+        format.html {render action: "new"}
+      end
+    end
   end
 
   def edit

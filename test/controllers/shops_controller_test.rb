@@ -46,9 +46,9 @@ class ShopsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
-    assert_response :success
+  test "should create new shop" do
+    post :create, shop: @params
+    assert_redirected_to shops_show_path
   end
 
   test "should get edit" do
