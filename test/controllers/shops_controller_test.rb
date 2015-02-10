@@ -1,6 +1,32 @@
 require 'test_helper'
 
 class ShopsControllerTest < ActionController::TestCase
+  # *********** Stuff available after a valid request ************
+  # puts "assigns", assigns
+  # puts "cookies", cookies
+  # puts "flash", flash
+  # puts "session", session
+  # puts "controller", @controller
+  # puts "request", @request
+  # puts "response", @response.@status
+
+  setup do
+    @shop = shops(:shop1)
+
+    @params = {
+      name: "Tats-R-Us",
+      address: "1313 Mockingbird Ln",
+      city: "Hollyweird",
+      state: "CA",
+      zip: "90210",
+      url: "http://tatsrus.example.com"
+    }
+  end
+
+  teardown do
+    @shop = nil
+  end
+
   test "should get index" do
     get :index
     assert_response :success
