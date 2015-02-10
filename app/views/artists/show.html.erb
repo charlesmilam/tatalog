@@ -1,2 +1,6 @@
-<h1>Artists#show</h1>
-<p>Find me in app/views/artists/show.html.erb</p>
+<h1><%= @artist.first_name + " " + @artist.last_name %></h1>
+<div class="artist-info">
+  <p><%= @artist.nick %></p>
+  <p><%= @artist.email %></p>
+  <p><%= @artist.url %></p>
+</div>
