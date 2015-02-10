@@ -39,6 +39,10 @@ class ShopsControllerTest < ActionController::TestCase
 
   test "should get new" do
     get :new
+
+    shop = assigns(:shop)
+
+    assert shop.new_record?
     assert_response :success
   end
 
