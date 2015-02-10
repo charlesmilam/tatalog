@@ -34,9 +34,20 @@ class ShopsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @shop.update(shop_params)
+        format.html {redirect_to shops_show_path, notice: "Shop successfuly updated."}
+      else
+        format.html {render action: "edit"}        
+      end
+    end
   end
 
   def destroy
+    @shop.destroy
+    respond_to do |format|
+      format.html {redirect_to shops_index_path}
+    end
   end
 
   private

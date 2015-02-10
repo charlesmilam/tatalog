@@ -52,18 +52,18 @@ class ShopsControllerTest < ActionController::TestCase
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, id: @shop.id
     assert_response :success
   end
 
-  test "should get update" do
-    get :update
-    assert_response :success
+  test "should update shop" do
+    put :update, id: @shop.id, shop: {name: "New Cool Tat Shop Name"}
+    assert_redirected_to shops_show_path
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
+  test "should delete shop" do
+    delete :destroy, id: @shop.id
+    assert_redirected_to shops_index_path
   end
 
 end
