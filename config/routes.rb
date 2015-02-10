@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
+  
   root "pages#home"
 
   resources :users do
     resources :tattoos
   end
+
+  resources :artists
 
   resources :shops
 
