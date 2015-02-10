@@ -23,7 +23,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
-        format.html {redirect_to shops_show_path, notice: "Shop created successfuly."}
+        format.html {redirect_to shop_path(@shop.id), notice: "Shop created successfuly."}
       else
         format.html {render action: "new"}
       end
@@ -36,7 +36,7 @@ class ShopsController < ApplicationController
   def update
     respond_to do |format|
       if @shop.update(shop_params)
-        format.html {redirect_to shops_show_path, notice: "Shop successfuly updated."}
+        format.html {redirect_to shop_path(@shop.id), notice: "Shop successfuly updated."}
       else
         format.html {render action: "edit"}        
       end
@@ -46,7 +46,7 @@ class ShopsController < ApplicationController
   def destroy
     @shop.destroy
     respond_to do |format|
-      format.html {redirect_to shops_index_path}
+      format.html {redirect_to shops_path}
     end
   end
 

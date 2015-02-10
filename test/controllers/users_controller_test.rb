@@ -49,13 +49,11 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should get create" do
     get :create, user: @params
-    puts "user get", @response
     assert_response :success
   end
 
   test "should create new user" do
     post :create, @params
-    puts "create new user", @assigns
     assert_redirected_to user_url(@assigns["user"].id)
     assert_response :redirect
   end
