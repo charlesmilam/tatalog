@@ -1,0 +1,40 @@
+<%= form_for(@artist) do |f| %>
+  <% if @artist.errors.any? %>
+    <div id="errors">
+      <h2>
+        <%= pluralize(@artist.errors.count, "error") %>
+        prevented you from creating a new artist:
+      </h2>
+
+      <ul>
+        <% @artist.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :first_name %><br>
+    <%= f.text_field :first_name, placeholder: "first name" %><br>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br>
+    <%= f.text_field :last_name, placeholder: "last name" %><br>
+  </div>
+  <div class="field">
+    <%= f.label :nick %><br>
+    <%= f.text_field :nick, placeholder: "nickname/handle" %><br>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email, placeholder: "email" %><br>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url, placeholder: "http://<shop website here>.com" %><br>
+  </div>
+  <div class="actions">
+    <br><%= f.submit %>
+  </div>
+<% end %>
