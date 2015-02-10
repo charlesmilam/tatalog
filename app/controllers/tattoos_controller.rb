@@ -8,32 +8,34 @@ class TattoosController < ApplicationController
                 ]
   before_action :set_user,
                 only: [
+                  :index,
                   :show,
-                  :edit,
+                  :new,
                   :create,
+                  :edit,
                   :update,
                   :destroy
                 ]
 
   def index
-    @tattoos = Tattoo.all
+    @tattoos = @user.tattoos.all
   end
 
   def show
   end
 
   def new
-    @tattoo = Tattoo.new
+    @tattoo = @user.tattoos.new
   end
 
   def create
-    respond_to do |format|
-      if @tattoo = @user.tattoos.create(tattoo_params)
-        format.html {redirect_to user_tattoo_path(id: @tattoo[:id]), notice: "Tattoo sucessfully created."}
-      else
-        format.html {render action: "new"}
-      end
-    end
+    tattoo = @user.tattoos.new(tattoo_params)
+
+    if tattoo.save
+      redirect_to user_tattoos_path, notice: "Tattoo sucessfully created."
+    else
+      render action: "new"
+    end      
   end
 
   def edit
@@ -41,7 +43,6 @@ class TattoosController < ApplicationController
 
   def update
     respond_to do |format|
-      puts "user tattoos", @user.tattoos.find_by(@tattoo.id)
       if @tattoo.update(tattoo_params)
         format.html {redirect_to user_tattoo_path(id: @tattoo[:id]), notice: "Tattoo sucessfully updated."}
       else
