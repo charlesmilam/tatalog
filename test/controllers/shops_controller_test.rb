@@ -33,7 +33,7 @@ class ShopsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    get :show, id: @shop.id
     assert_response :success
   end
 

@@ -6,7 +6,7 @@ class ShopsController < ApplicationController
                     :update,
                     :destroy
                   ]
-                  
+
   def index
     @shops = Shop.all
   end
@@ -27,5 +27,14 @@ class ShopsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+  def set_shop
+    @shop = Shop.find(params[:id])
+  end
+
+  def shop_params
+    params.require(:shop) .permit(:name, :address, :city, :state, :zip, :url)
   end
 end
