@@ -19,6 +19,7 @@ class TattooPicsControllerTest < ActionController::TestCase
 
     @params = {
         id: @pic.id,
+        tattoo_id: @tattoo.id,
         description: @pic.description,
         url: @pic.url,
       }
@@ -36,7 +37,7 @@ class TattooPicsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    get :show, tattoo_id: @tattoo_id, id: @pic.id
     assert_response :success
   end
 
