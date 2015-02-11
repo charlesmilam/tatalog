@@ -51,6 +51,11 @@ class TattooPicsController < ApplicationController
   end
 
   def destroy
+    @pic.destroy
+
+    respond_to do |format|
+      format.html {redirect_to tattoo_tattoo_pics_path}
+    end
   end
 
   private

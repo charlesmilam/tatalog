@@ -64,8 +64,8 @@ class TattooPicsControllerTest < ActionController::TestCase
   end
 
   test "should get destroy" do
-    get :destroy
-    assert_response :success
+    get :destroy, tattoo_id: @tattoo.id, id: @pic.id
+    assert_redirected_to tattoo_tattoo_pics_path
   end
 
 end
