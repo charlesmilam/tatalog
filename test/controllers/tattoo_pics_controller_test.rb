@@ -57,9 +57,10 @@ class TattooPicsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get update" do
-    get :update
-    assert_response :success
+  test "should update pic" do
+    put :update, tattoo_id: @tattoo.id, id: @pic.id, tattoo_pic: @params
+    puts "update response", @assigns
+    assert_redirected_to tattoo_tattoo_pic_path(id: @assigns["pic"][:id])
   end
 
   test "should get destroy" do

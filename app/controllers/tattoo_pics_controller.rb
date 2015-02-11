@@ -41,6 +41,13 @@ class TattooPicsController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @pic.update(pic_params)
+        format.html {redirect_to tattoo_tattoo_pic_path(id: @pic[:id]), notice: "Tattoo pic sucessfully updated."}
+      else
+        format.html {render action: "new"}
+      end
+    end
   end
 
   def destroy
