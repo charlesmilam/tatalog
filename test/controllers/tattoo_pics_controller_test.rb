@@ -37,22 +37,23 @@ class TattooPicsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show, tattoo_id: @tattoo_id, id: @pic.id
+    get :show, tattoo_id: @tattoo.id, id: @pic.id
     assert_response :success
   end
 
   test "should get new" do
-    get :new
+    get :new, tattoo_id: @tattoo.id
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
-    assert_response :success
+  test "should create pic" do
+    puts "pic params", @params
+    post :create, tattoo_id: @tattoo.id, tattoo_pic: @params
+    assert_redirected_to tattoo_tattoo_pics_path
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, tattoo_id: @tattoo.id, id: @pic.id
     assert_response :success
   end
 

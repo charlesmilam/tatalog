@@ -24,9 +24,17 @@ class TattooPicsController < ApplicationController
   end
 
   def new
+    @pic = @tattoo.tattoo_pics.new
   end
 
   def create
+    pic = @tattoo.tattoo_pics.new(pic_params)
+
+    if pic.save
+      redirect_to tattoo_tattoo_pics_path, notice: "Tattoo pic sucessfully created."
+    else
+      render action: "new"
+    end
   end
 
   def edit
@@ -39,12 +47,12 @@ class TattooPicsController < ApplicationController
   end
 
   private
-  def pics_params
+  def pic_params
     params.require(:tattoo_pic) .permit(:tattoo_id, :description, :url)
   end
 
   def set_pic
-    @pic = Tattoo_Pic.find(params[:id])
+    @pic = TattooPic.find(params[:id])
   end
 
   def set_tattoo
