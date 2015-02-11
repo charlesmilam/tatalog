@@ -37,14 +37,15 @@ class FavoritesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
+  test "should create favorite" do
+    post :create, favorite: @params
+    puts "create", @request.params, @response, @assigns
     assert_response :success
   end
 
-  test "should get destroy" do
-    get :destroy
-    assert_response :success
+  test "should delete favorite" do
+    get :destroy, id: @favorite.id, user_id: @user.id
+    assert_redirected_to user_tattoos_path(@user.id)
   end
 
 end
