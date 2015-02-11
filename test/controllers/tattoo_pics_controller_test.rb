@@ -19,6 +19,7 @@ class TattooPicsControllerTest < ActionController::TestCase
 
     @params = {
         id: @pic.id,
+        tattoo_id: @tattoo.id,
         description: @pic.description,
         url: @pic.url,
       }
@@ -36,33 +37,35 @@ class TattooPicsControllerTest < ActionController::TestCase
   end
 
   test "should get show" do
-    get :show
+    get :show, tattoo_id: @tattoo.id, id: @pic.id
     assert_response :success
   end
 
   test "should get new" do
-    get :new
+    get :new, tattoo_id: @tattoo.id
     assert_response :success
   end
 
-  test "should get create" do
-    get :create
-    assert_response :success
+  test "should create pic" do
+    puts "pic params", @params
+    post :create, tattoo_id: @tattoo.id, tattoo_pic: @params
+    assert_redirected_to tattoo_tattoo_pics_path
   end
 
   test "should get edit" do
-    get :edit
+    get :edit, tattoo_id: @tattoo.id, id: @pic.id
     assert_response :success
   end
 
-  test "should get update" do
-    get :update
-    assert_response :success
+  test "should update pic" do
+    put :update, tattoo_id: @tattoo.id, id: @pic.id, tattoo_pic: @params
+    puts "update response", @assigns
+    assert_redirected_to tattoo_tattoo_pic_path(id: @assigns["pic"][:id])
   end
 
   test "should get destroy" do
-    get :destroy
-    assert_response :success
+    get :destroy, tattoo_id: @tattoo.id, id: @pic.id
+    assert_redirected_to tattoo_tattoo_pics_path
   end
 
 end
