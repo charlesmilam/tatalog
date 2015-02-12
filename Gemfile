@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.1.5'
+gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record, but only during test and development
 gem 'sqlite3', group: [:development, :test]
 # Use pg for deployment, required for heroku
@@ -10,7 +10,7 @@ gem "pg", group: :production
 # 12factor Needed for heroku deployment
 gem "rails_12factor", group: :production
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -32,8 +32,11 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-
+# Use for debugging
 gem 'byebug'
+
+# Foundation 5 css framework and javascript
+gem "foundation-rails"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
