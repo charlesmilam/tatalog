@@ -130,7 +130,7 @@ $font-weight-bold: bold !default;
 
 // We use these to control various global styles
 $body-bg: $darkPrimaryColor;
-$body-font-color: $textPrimaryColor;
+$body-font-color: $lightPrimaryColor;
 $body-font-family: $font-family-sans-serif;
 $body-font-weight: $font-weight-normal;
 $body-font-style: normal;
@@ -260,8 +260,8 @@ $small-font-size: 50%;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
+$anchor-font-color: $textPrimaryColor;
+$anchor-font-color-hover: $secondaryTextColor;
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
