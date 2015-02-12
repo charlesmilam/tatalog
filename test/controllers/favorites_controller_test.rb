@@ -11,12 +11,13 @@ class FavoritesControllerTest < ActionController::TestCase
   # puts "response", @response.@status
 
   setup do
-    @user = users(:user1)
-    @tattoo = tattoos(:tattoo1)
+    # @user = users(:user1)
+    # @tattoo = tattoos(:tattoo1)
+    @user = User.create({user_name: "test", email: "test", password: "test"})
+    @tattoo = Tattoo.create({user_id: 1, artist_id: 1, shop_id: 1})
     @favorite = favorites(:favorite1)
 
     @params = {
-        id: @favorite.id,
         user_id: @user.id,
         tattoo_id: @tattoo.id,
       }
@@ -39,6 +40,7 @@ class FavoritesControllerTest < ActionController::TestCase
 
   test "should create favorite" do
     post :create, favorite: @params
+    #puts "request", @request.inspect
     puts "create", @request.params, @response, @assigns
     assert_response :success
   end
