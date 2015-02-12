@@ -11,4 +11,6 @@
 # t.datetime "created_at"
 # t.datetime "updated_at"
 
-
+favorite1:
+  user_id: 1
+  tattoo_id: 1
