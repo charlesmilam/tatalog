@@ -1,8 +1,17 @@
-<h1><%= @user.user_name %>'s Tattoos</h1>
-<div id="tattoos-list">
-  <ul>
+<div class="row">
+  <div class="large-2 columns"></div>
+  <div class="small-12 large-8 columns">
+    <h1><%= @user.user_name %>'s Tattoos</h1>
     <% @tattoos.each do |tattoo| %>
-      <li> <%= tattoo.name %> </li>
+      <p> <%= tattoo.id.to_s + " " + tattoo.name %>
+      <ul class="clearing-thumbs" id="gallery-box" data-clearing>
+        <% if tattoo.tattoo_pics.all %>
+          <% tattoo.tattoo_pics.all.each do |pic| %>
+            <li id="gallery-content"><a class="th radius" href=<%= pic.url %>><img src=<%= pic.url %>></a></li>
+          <% end %>
+        <% end %>
+      </ul>
     <% end %>
-  </ul>
+  </div>
+  <div class="large-2 columns"></div>
 </div>
