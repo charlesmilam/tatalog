@@ -42,8 +42,8 @@ shop_list = [
 
 favorite_list = [
   [1, 1],
-  [1, 1],
   [2, 1],
+  [3, 1],
   [3, 2],
   [4, 3]
 ]
@@ -65,16 +65,16 @@ user_list.each do |user_name, email, password|
   User.create user_name: user_name, email: email, password: password
 end
 
-tattoo_list.each do |user_id, name, artist_id, when, shop_id, why|
-  Tattoo.create user_id: user_id, name: name, artist_id: artist_id, when: when, shop_id: shop_id, why: why
+shop_list.each do |name, address, city, state, zip, url|
+  Shop.create name: name, address: address, city: city, state: state, zip: zip, url: url
 end
 
 artist_list.each do |first_name, last_name, nick, email, shop_id, url|
   Artist.create first_name: first_name, last_name: last_name, nick: nick, email: email, shop_id: shop_id, url: url
 end
 
-shop_list.each do |name, address, city, state, zip, url|
-  Shop.create name: name, address: address, city: city, state: state, zip: zip, url: url|
+tattoo_list.each do |user_id, name, artist_id, when_date, shop_id, why|
+  Tattoo.create user_id: user_id, name: name, artist_id: artist_id, when: when_date, shop_id: shop_id, why: why
 end
 
 favorite_list.each do |user_id, tattoo_id|
