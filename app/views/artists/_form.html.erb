@@ -1,36 +1,8 @@
-<%= form_for(@artist) do |f| %>
-  <% if @artist.errors.any? %>
-    <div id="errors">
-      <h2>
-        <%= pluralize(@artist.errors.count, "error") %>
-        prevented you from creating a new artist:
-      </h2>
-
-      <ul>
-        <% @artist.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, placeholder: "Name of artist" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :nick %><br>
-    <%= f.text_field :nick, placeholder: "nickname/handle" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email, placeholder: "email" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url, placeholder: "http://<shop website here>.com" %><br>
-  </div>
-  <div class="actions">
-    <br><%= f.submit %>
-  </div>
+<%= simple_form_for @artist do |f| %>
+  <%= f.input :name, placeholder: "Name of tattoo artist" %>
+  <%= f.input :nick, placeholder: "Nickname/handle for artist" %>
+  <%= f.input :email, placeholder: "email@example.com" %>
+  <%= f.input :url, placeholder: "http://example.com/artist-name" %>
+  <%= f.input :shop_id, label: "Shop", placeholder: "Shop where artist works", collection: @shops %>
+  <%= f.button :submit %>
 <% end %>

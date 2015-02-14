@@ -5,6 +5,11 @@ class ArtistsController < ApplicationController
                   :update,
                   :destroy
                   ]
+  before_action :set_shops,
+                only: [
+                  :new,
+                  :edit
+                ]
 
   def index
     @artists = Artist.all
@@ -54,6 +59,14 @@ class ArtistsController < ApplicationController
   private
   def set_artist 
     @artist = Artist.find(params[:id])
+  end
+
+  def set_shops
+    @shops = []
+    shops = Shop.all
+    shops.each do |shop|
+      @shops << [shop.name, shop.id]
+    end
   end
 
   def artist_params
