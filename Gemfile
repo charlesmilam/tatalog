@@ -37,6 +37,8 @@ gem 'byebug'
 
 # Foundation 5 css framework and javascript
 gem "foundation-rails"
+# Simple Form for form creation
+gem "simple_form"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
