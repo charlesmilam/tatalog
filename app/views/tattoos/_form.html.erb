@@ -1,4 +1,10 @@
 <%= simple_form_for [@user, @tattoo] do |f| %>
   <%= f.input :name, placeholder: "A name/nickname for the tat" %>
-  <%= f.input :artist_id, label: "Artist", collection: @artists %>
+  <%= f.input :artist_id, label: "Artist", placeholder: "Select an artist", collection: @artists %>
+  <%= f.input :when, placeholder: "When did you get the tattoo?", 
+      start_year: Date.today.year - 77, end_year: Date.today.year
+  %>
+  <%= f.input :shop_id, label: "Shop", placeholder: "Shop where you received tat", collection: @shops %>
+  <%= f.input :why, placeholder: "Why did you get this tattoo?" %>
+  <%= f.button :submit %>
 <% end %>

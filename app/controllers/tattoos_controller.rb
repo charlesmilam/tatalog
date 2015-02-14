@@ -16,7 +16,12 @@ class TattoosController < ApplicationController
                   :update,
                   :destroy
                 ]
-  before_action :set_artist,
+  before_action :set_artists,
+                only: [
+                  :new,
+                  :edit
+                ]
+  before_action :set_shops,
                 only: [
                   :new,
                   :edit
@@ -77,11 +82,19 @@ class TattoosController < ApplicationController
     @tattoo = Tattoo.find(params[:id])
   end
 
-  def set_artist
+  def set_artists
     @artists = []
     artists = Artist.all
     artists.each do |artist|
-      @artists << [artist.first_name, artist.id]
+      @artists << [artist.name, artist.id]
+    end
+  end
+
+  def set_shops
+    @shops = []
+    shops = Shop.all
+    shops.each do |shop|
+      @shops << [shop.name, shop.id]
     end
   end
 end

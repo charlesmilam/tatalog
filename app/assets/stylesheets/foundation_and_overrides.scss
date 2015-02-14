@@ -532,25 +532,25 @@ $button-bg-color: $accentColor;
 // $f-dropdown-margin-bottom: $f-dropdown-margin-top;
 
 // We use this to control the background color
-// $f-dropdown-bg: $white;
+$f-dropdown-bg: $lightPrimaryColor;
 
 // We use this to set the border styles for dropdowns.
 // $f-dropdown-border-style: solid;
 // $f-dropdown-border-width: 1px;
-// $f-dropdown-border-color: scale-color($white, $lightness: -20%);
+$f-dropdown-border-color: scale-color($lightPrimaryColor, $lightness: -20%);
 
 // We use these to style the triangle pip.
-// $f-dropdown-triangle-size: 6px;
-// $f-dropdown-triangle-color: $white;
+$f-dropdown-triangle-size: 9px;
+$f-dropdown-triangle-color: $darkPrimaryColor;
 // $f-dropdown-triangle-side-offset: 10px;
 
 // We use these to control styles for the list elements.
 // $f-dropdown-list-style: none;
-// $f-dropdown-font-color: $charcoal;
-// $f-dropdown-font-size: rem-calc(14);
+$f-dropdown-font-color: $primaryTextColor;
+$f-dropdown-font-size: rem-calc(25);
 // $f-dropdown-list-padding: rem-calc(5, 10);
 // $f-dropdown-line-height: rem-calc(18);
-// $f-dropdown-list-hover-bg: $smoke;
+$f-dropdown-list-hover-bg: $accentColor;
 // $dropdown-mobile-default-float: 0;
 
 // We use this to control the styles for when the dropdown has custom content.
