@@ -11,6 +11,8 @@
       start_year: Date.today.year - 77, end_year: Date.today.year
   %>
   <%= f.input :shop_id, label: "Shop", placeholder: "Shop where you received tat", collection: @shops %>
+  Your shop missing?
+  <%= link_to("Click to add a new shop", new_shop_path) %>
   <%= f.input :why, placeholder: "Why did you get this tattoo?" %>
   <%= f.button :submit %>
 <% end %>
