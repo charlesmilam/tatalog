@@ -11,20 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150131053344) do
+ActiveRecord::Schema.define(version: 20150214033158) do
 
-  create_table "artists", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+  create_table "artists", force: :cascade do |t|
     t.string   "nick"
     t.string   "email"
     t.integer  "shop_id"
     t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "name"
   end
 
-  create_table "favorites", force: true do |t|
+  create_table "favorites", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "tattoo_id"
     t.datetime "created_at"
@@ -34,7 +33,7 @@ ActiveRecord::Schema.define(version: 20150131053344) do
   add_index "favorites", ["tattoo_id"], name: "index_favorites_on_tattoo_id"
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
-  create_table "shops", force: true do |t|
+  create_table "shops", force: :cascade do |t|
     t.string   "name"
     t.string   "address"
     t.string   "city"
@@ -45,7 +44,7 @@ ActiveRecord::Schema.define(version: 20150131053344) do
     t.datetime "updated_at"
   end
 
-  create_table "tattoo_pics", force: true do |t|
+  create_table "tattoo_pics", force: :cascade do |t|
     t.integer  "tattoo_id"
     t.string   "description"
     t.string   "url"
@@ -53,7 +52,7 @@ ActiveRecord::Schema.define(version: 20150131053344) do
     t.datetime "updated_at"
   end
 
-  create_table "tattoos", force: true do |t|
+  create_table "tattoos", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
     t.integer  "artist_id"
@@ -64,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150131053344) do
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "user_name"
     t.string   "email"
     t.string   "password"
