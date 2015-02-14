@@ -14,6 +14,7 @@ class ArtistsController < ApplicationController
   end
 
   def new
+    session[:return_to] ||= request.referer
     @artist = Artist.new
   end
 
@@ -22,7 +23,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       if @artist.save
-        format.html {redirect_to artist_path(@artist.id), notice: "Artist created successfully"}
+        format.html {redirect_to session.delete(:return_to), notice: "Artist created successfully"}
       else
       format.html {render action: "new"}        
       end
@@ -56,8 +57,7 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist) .permit(:first_name,
-                                    :last_name,
+    params.require(:artist) .permit(:name,
                                     :nick,
                                     :email,
                                     :shop_id,

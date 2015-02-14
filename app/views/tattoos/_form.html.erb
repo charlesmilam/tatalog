@@ -1,6 +1,12 @@
 <%= simple_form_for [@user, @tattoo] do |f| %>
   <%= f.input :name, placeholder: "A name/nickname for the tat" %>
   <%= f.input :artist_id, label: "Artist", placeholder: "Select an artist", collection: @artists %>
+  Your tattoo artist missing? 
+  <%= link_to "Click to add a new artist", new_artist_path, data: {reveal_id: "newArtistModal"} %>
+  <div id="newArtistModal" class="reveal-modal" data-reveal>
+    <h2> Add a new artist </h2>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
   <%= f.input :when, placeholder: "When did you get the tattoo?", 
       start_year: Date.today.year - 77, end_year: Date.today.year
   %>
