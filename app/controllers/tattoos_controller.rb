@@ -16,6 +16,11 @@ class TattoosController < ApplicationController
                   :update,
                   :destroy
                 ]
+  before_action :set_artist,
+                only: [
+                  :new,
+                  :edit
+                ]
 
   def index
     @tattoos = @user.tattoos.all
@@ -70,5 +75,13 @@ class TattoosController < ApplicationController
 
   def set_tattoo
     @tattoo = Tattoo.find(params[:id])
+  end
+
+  def set_artist
+    @artists = []
+    artists = Artist.all
+    artists.each do |artist|
+      @artists << [artist.first_name, artist.id]
+    end
   end
 end

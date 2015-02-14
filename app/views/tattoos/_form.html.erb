@@ -1,40 +1,4 @@
-<%= form_for [@user, @tattoo] do |f| %>
-  <% if @tattoo.errors.any? %>
-    <div id="errors">
-      <h2>
-        <%= pluralize(@tattoo.errors.count, "error") %>
-        prevented you from adding a new tattoo:
-      </h2>
-
-      <ul>
-        <% @tattoo.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, placeholder: "name/nickname for tattoo" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :artist_id %><br>
-    <%= f.text_field :artist_id, placeholder: "an artist id" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :shop_id %><br>
-    <%= f.text_field :shop_id, placeholder: "a shop id" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :when %><br>
-    <%= f.text_field :when, placeholder: "example: 2015-1-1" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :why %><br>
-    <%= f.text_field :why, placeholder: "why I got this tattoo" %><br>
-  </div>
-  <div class="actions">
-    <br><%= f.submit %>
-  </div>
+<%= simple_form_for [@user, @tattoo] do |f| %>
+  <%= f.input :name, placeholder: "A name/nickname for the tat" %>
+  <%= f.input :artist_id, label: "Artist", collection: @artists %>
 <% end %>

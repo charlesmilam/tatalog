@@ -29,9 +29,9 @@ tattoo_list = [
 ]
 
 artist_list = [
-  ["Max", "Ink", "Maxxer", "max@example.com", 1, "http://example.com/max"],
-  ["John", "Gray", "Johnny", "john@example.com", 1, "http://example.com/john"],
-  ["Willliam", "Newschool", "Billy", "billy@example.com", 1, "http://example.com/billy"]
+  ["Max Ink", "Maxxer", "max@example.com", 1, "http://example.com/max"],
+  ["John Gray", "Johnny", "john@example.com", 1, "http://example.com/john"],
+  ["Willliam Newschool", "Billy", "billy@example.com", 1, "http://example.com/billy"]
 ]
 
 shop_list = [
@@ -69,8 +69,8 @@ shop_list.each do |name, address, city, state, zip, url|
   Shop.create name: name, address: address, city: city, state: state, zip: zip, url: url
 end
 
-artist_list.each do |first_name, last_name, nick, email, shop_id, url|
-  Artist.create first_name: first_name, last_name: last_name, nick: nick, email: email, shop_id: shop_id, url: url
+artist_list.each do |name, nick, email, shop_id, url|
+  Artist.create name: name, nick: nick, email: email, shop_id: shop_id, url: url
 end
 
 tattoo_list.each do |user_id, name, artist_id, when_date, shop_id, why|
