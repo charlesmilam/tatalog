@@ -437,8 +437,8 @@ $anchor-font-color-hover: $secondaryTextColor;
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
-// $button-font-color: $white;
-// $button-font-color-alt: $oil;
+$button-font-color: $textPrimaryColor;
+$button-font-color-alt: $primaryTextColor;
 // $button-font-tny: rem-calc(11);
 // $button-font-sml: rem-calc(13);
 // $button-font-med: rem-calc(16);
@@ -447,12 +447,12 @@ $anchor-font-color-hover: $secondaryTextColor;
 // $button-font-align: center;
 
 // We use these to control various hover effects.
-// $button-function-factor: -20%;
+$button-function-factor: -30%;
 
 // We use these to control button border and hover styles.
-// $button-border-width: 0px;
+$button-border-width: 1px;
 // $button-border-style: solid;
-// $button-bg-color: $primary-color;
+$button-bg-color: $accentColor;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
 // $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
@@ -621,25 +621,25 @@ $anchor-font-color-hover: $secondaryTextColor;
 
 // We use these to style the labels in different ways
 // $form-label-pointer: pointer;
-// $form-label-font-size: rem-calc(14);
+$form-label-font-size: rem-calc(25);
 // $form-label-font-weight: $font-weight-normal;
 // $form-label-line-height: 1.5;
-// $form-label-font-color: scale-color($black, $lightness: 30%);
+$form-label-font-color: scale-color($primaryTextColor, $lightness: 0%);
 // $form-label-small-transform: capitalize;
 // $form-label-bottom-margin: 0;
 // $input-font-family: inherit;
-// $input-font-color: rgba(0,0,0,0.75);
-// $input-font-size: rem-calc(14);
-// $input-bg-color: $white;
-// $input-focus-bg-color: scale-color($white, $lightness: -2%);
-// $input-border-color: scale-color($white, $lightness: -20%);
-// $input-focus-border-color: scale-color($white, $lightness: -40%);
+$input-font-color: $primaryTextColor;
+$input-font-size: rem-calc(20);
+$input-bg-color: $lightPrimaryColor;
+$input-focus-bg-color: scale-color($textPrimaryColor, $lightness: -3%);
+$input-border-color: scale-color($lightPrimaryColor, $lightness: -20%);
+$input-focus-border-color: scale-color($lightPrimaryColor, $lightness: -40%);
 // $input-border-style: solid;
-// $input-border-width: 1px;
+$input-border-width: 1px;
 // $input-border-radius: $global-radius;
 // $input-disabled-bg: $gainsboro;
 // $input-disabled-cursor: $cursor-default-value;
-// $input-box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+$input-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
@@ -654,13 +654,13 @@ $anchor-font-color-hover: $secondaryTextColor;
 // $legend-padding: rem-calc(0 3);
 
 // We use these to style the prefix and postfix input elements
-// $input-prefix-bg: scale-color($white, $lightness: -5%);
-// $input-prefix-border-color: scale-color($white, $lightness: -20%);
+$input-prefix-bg: scale-color($textPrimaryColor, $lightness: -5%);
+$input-prefix-border-color: scale-color($textPrimaryColor, $lightness: -20%);
 // $input-prefix-border-size: 1px;
 // $input-prefix-border-type: solid;
 // $input-prefix-overflow: hidden;
-// $input-prefix-font-color: $oil;
-// $input-prefix-font-color-alt: $white;
+$input-prefix-font-color: $primaryTextColor;
+$input-prefix-font-color-alt: $textPrimaryColor;
 
 // We use this setting to turn on/off HTML5 number spinners (the up/down arrows)
 // $input-number-spinners: true;
@@ -668,16 +668,16 @@ $anchor-font-color-hover: $secondaryTextColor;
 // We use these to style the error states for inputs and labels
 // $input-error-message-padding: rem-calc(6 9 9);
 // $input-error-message-top: -1px;
-// $input-error-message-font-size: rem-calc(12);
+$input-error-message-font-size: rem-calc(15);
 // $input-error-message-font-weight: $font-weight-normal;
 // $input-error-message-font-style: italic;
-// $input-error-message-font-color: $white;
+$input-error-message-font-color: $textPrimaryColor;
 // $input-error-message-bg-color: $alert-color;
-// $input-error-message-font-color-alt: $oil;
+$input-error-message-font-color-alt: $primaryTextColor;
 
 // We use this to style the glowing effect of inputs when focused
 // $input-include-glowing-effect: true;
-// $glowing-effect-fade-time: 0.45s;
+$glowing-effect-fade-time: 0.79s;
 // $glowing-effect-color: $input-focus-border-color;
 
 // Select variables
@@ -1341,15 +1341,15 @@ $anchor-font-color-hover: $secondaryTextColor;
 
 // $include-html-tooltip-classes: $include-html-classes;
 
-// $has-tip-border-bottom: dotted 1px $iron;
+$has-tip-border-bottom: dotted 1px $accentColor;
 // $has-tip-font-weight: $font-weight-bold;
-// $has-tip-font-color: $oil;
-// $has-tip-border-bottom-hover: dotted 1px scale-color($primary-color, $lightness: -55%);
-// $has-tip-font-color-hover: $primary-color;
+$has-tip-font-color: $primaryTextColor;
+$has-tip-border-bottom-hover: dotted 1px scale-color($primaryColor, $lightness: -55%);
+$has-tip-font-color-hover: $primaryColor;
 // $has-tip-cursor-type: help;
 
 // $tooltip-padding: rem-calc(12);
-// $tooltip-bg: $oil;
+$tooltip-bg: $darkPrimaryColor;
 // $tooltip-font-size: rem-calc(14);
 // $tooltip-font-weight: $font-weight-normal;
 // $tooltip-font-color: $white;
