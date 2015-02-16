@@ -19,8 +19,15 @@ class TattoosController < ApplicationController
   before_action :set_artists,
                 only: [
                   :new,
-                  :edit
+                  :edit,
+                  :index,
+                  :show
                 ]
+  # before_action :set_artist,
+  #               only: [
+  #                 :index,
+  #                 :show
+  #               ]
   before_action :set_shops,
                 only: [
                   :new,
@@ -88,7 +95,14 @@ class TattoosController < ApplicationController
     artists.each do |artist|
       @artists << [artist.name, artist.id]
     end
+    puts "artists", @artists
   end
+
+  # def set_artist
+  #   puts "tattoo params", params
+  #   puts "artists", @artists
+  #   @artist = Artist.find(params[:user_id])
+  # end
 
   def set_shops
     @shops = []
