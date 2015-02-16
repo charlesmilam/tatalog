@@ -644,13 +644,13 @@ $input-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 // We use these to style the fieldset border and spacing.
 // $fieldset-border-style: solid;
 // $fieldset-border-width: 1px;
-// $fieldset-border-color: $gainsboro;
+$fieldset-border-color: $primaryTextColor;
 // $fieldset-padding: rem-calc(20);
 // $fieldset-margin: rem-calc(18 0);
 
 // We use these to style the legends when you use them
-// $legend-bg: $white;
-// $legend-font-weight: $font-weight-bold;
+$legend-bg: $darkPrimaryColor;
+$legend-font-weight: $font-weight-normal;
 // $legend-padding: rem-calc(0 3);
 
 // We use these to style the prefix and postfix input elements
@@ -681,7 +681,7 @@ $glowing-effect-fade-time: 0.79s;
 // $glowing-effect-color: $input-focus-border-color;
 
 // Select variables
-// $select-bg-color: $ghost;
+$select-bg-color: $lightPrimaryColor;
 // $select-hover-bg-color: scale-color($select-bg-color, $lightness: -3%);
 
 // 12. Icon Bar
