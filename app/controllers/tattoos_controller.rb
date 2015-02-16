@@ -71,7 +71,7 @@ class TattoosController < ApplicationController
 
   private
   def tattoo_params
-    params.require(:tattoo) .permit(:user_id, :artist_id, :shop_id, :name, :when, :why)
+    params.require(:tattoo) .permit(:user_id, :artist_id, :shop_id, :name, :when, :why, :image)
   end
 
   def set_user

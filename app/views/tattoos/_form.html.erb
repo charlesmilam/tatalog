@@ -1,4 +1,5 @@
-<%= simple_form_for [@user, @tattoo] do |f| %>
+<%= simple_form_for [@user, @tattoo], html: {multipart: true} do |f| %>
+  <%= f.file_field :image, label: "Upload an image" %>
   <%= f.input :name, placeholder: "A name/nickname for the tat" %>
   <%= f.input :artist_id, label: "Artist", placeholder: "Select an artist", collection: @artists %>
   Your tattoo artist missing? 
@@ -16,3 +17,4 @@
   <%= f.input :why, placeholder: "Why did you get this tattoo?" %>
   <%= f.button :submit %>
 <% end %>
+
