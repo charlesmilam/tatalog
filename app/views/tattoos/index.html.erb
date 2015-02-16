@@ -10,17 +10,20 @@
       </li>
     <% end %>
   </ul> -->
-
-  <% @tattoos.each do |tat| %>
-    <ul class="pricing-table" >
-      <li class="title"><a class="th" href=<%= tat.image.url %>> <img src=<%= tat.image.url(:small) %>></a></li>
-      <!-- <li class="price">.99</li> -->
-      <li class="description"><%= tat.why %></li>
-      <li class="bullet-item">Artist <%= tat.artist_id %></li>
-      <li class="bullet-item">Shop: <%= tat.shop_id %></li>
-      <li class="bullet-item">Date Received: <%= tat.when %></li>
-      <li class="cta-button"><a class="button" href="#">Favorite it!</a></li>
-    </ul>
+  <ul class="small-block-grid-2">
+    <% @tattoos.each do |tat| %>
+      <li>
+        <ul class="pricing-table" >
+          <li class="title"><a class="th" href=<%= tat.image.url %>> <img src=<%= tat.image.url(:small) %>></a></li>
+          <!-- <li class="price">.99</li> -->
+          <li class="description"><%= tat.why %></li>
+          <li class="bullet-item">Artist <%= tat.artist_id %></li>
+          <li class="bullet-item">Shop: <%= tat.shop_id %></li>
+          <li class="bullet-item">Date Received: <%= tat.when %></li>
+          <li class="cta-button"><a class="button" href="#">Favorite it!</a></li>
+        </ul>
+      </li>
   <% end %>
+  </ul>
   </div>
 </div>
