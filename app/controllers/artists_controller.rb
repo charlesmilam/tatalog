@@ -5,6 +5,11 @@ class ArtistsController < ApplicationController
                   :update,
                   :destroy
                   ]
+  before_action :set_shops,
+                only: [
+                  :new,
+                  :edit
+                ]
 
   def index
     @artists = Artist.all
@@ -14,6 +19,7 @@ class ArtistsController < ApplicationController
   end
 
   def new
+    session[:return_to] ||= request.referer
     @artist = Artist.new
   end
 
@@ -22,7 +28,7 @@ class ArtistsController < ApplicationController
 
     respond_to do |format|
       if @artist.save
-        format.html {redirect_to artist_path(@artist.id), notice: "Artist created successfully"}
+        format.html {redirect_to session.delete(:return_to), notice: "Artist created successfully"}
       else
       format.html {render action: "new"}        
       end
@@ -55,9 +61,16 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
   end
 
+  def set_shops
+    @shops = []
+    shops = Shop.all
+    shops.each do |shop|
+      @shops << [shop.name, shop.id]
+    end
+  end
+
   def artist_params
-    params.require(:artist) .permit(:first_name,
-                                    :last_name,
+    params.require(:artist) .permit(:name,
                                     :nick,
                                     :email,
                                     :shop_id,

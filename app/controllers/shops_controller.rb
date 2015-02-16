@@ -15,6 +15,7 @@ class ShopsController < ApplicationController
   end
 
   def new
+    session[:return_to] ||= request.referer
     @shop = Shop.new
   end
 
@@ -23,7 +24,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
-        format.html {redirect_to shop_path(@shop.id), notice: "Shop created successfuly."}
+        format.html {redirect_to session.delete(:return_to), notice: "Shop created successfuly."}
       else
         format.html {render action: "new"}
       end
