@@ -16,6 +16,16 @@ class TattoosController < ApplicationController
                   :update,
                   :destroy
                 ]
+  before_action :set_artists,
+                only: [
+                  :new,
+                  :edit
+                ]
+  before_action :set_shops,
+                only: [
+                  :new,
+                  :edit
+                ]
 
   def index
     @tattoos = @user.tattoos.all
@@ -61,7 +71,7 @@ class TattoosController < ApplicationController
 
   private
   def tattoo_params
-    params.require(:tattoo) .permit(:user_id, :artist_id, :shop_id, :name, :when, :why)
+    params.require(:tattoo) .permit(:user_id, :artist_id, :shop_id, :name, :when, :why, :image)
   end
 
   def set_user
@@ -70,5 +80,21 @@ class TattoosController < ApplicationController
 
   def set_tattoo
     @tattoo = Tattoo.find(params[:id])
+  end
+
+  def set_artists
+    @artists = []
+    artists = Artist.all
+    artists.each do |artist|
+      @artists << [artist.name, artist.id]
+    end
+  end
+
+  def set_shops
+    @shops = []
+    shops = Shop.all
+    shops.each do |shop|
+      @shops << [shop.name, shop.id]
+    end
   end
 end

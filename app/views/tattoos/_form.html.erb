@@ -1,40 +1,24 @@
-<%= form_for [@user, @tattoo] do |f| %>
-  <% if @tattoo.errors.any? %>
-    <div id="errors">
-      <h2>
-        <%= pluralize(@tattoo.errors.count, "error") %>
-        prevented you from adding a new tattoo:
-      </h2>
-
-      <ul>
-        <% @tattoo.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, placeholder: "name/nickname for tattoo" %><br>
+<%= simple_form_for [@user, @tattoo], html: {multipart: true} do |f| %>
+  <%= f.label "Upload an image" %>
+  <%= f.file_field :image, button: "Upload an image" %>
+  <%= f.input :name, placeholder: "A name/nickname for the tat" %>
+  <%= f.input :artist_id, label: "Artist", prompt: "Select an artist", collection: @artists %>
+  Your tattoo artist missing? 
+  <%= link_to "Click to add a new artist", new_artist_path, data: {reveal_id: "newArtistModal"} %>
+  <div id="newArtistModal" class="reveal-modal" data-reveal>
+    <h2> Add a new artist </h2>
+    <a class="close-reveal-modal">&#215;</a>
   </div>
-  <div class="field">
-    <%= f.label :artist_id %><br>
-    <%= f.text_field :artist_id, placeholder: "an artist id" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :shop_id %><br>
-    <%= f.text_field :shop_id, placeholder: "a shop id" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :when %><br>
-    <%= f.text_field :when, placeholder: "example: 2015-1-1" %><br>
-  </div>
-  <div class="field">
-    <%= f.label :why %><br>
-    <%= f.text_field :why, placeholder: "why I got this tattoo" %><br>
-  </div>
-  <div class="actions">
-    <br><%= f.submit %>
-  </div>
+  <fieldset>
+    <legend style="color: #212121; font-size: 1.6em;">When</legend>
+    <%= f.input :when, hint: "When did you get the tattoo?", label: false,
+        start_year: Date.today.year - 77, end_year: Date.today.year
+    %>
+  </fieldset>
+  <%= f.input :shop_id, label: "Shop", prompt: "Select a shop", collection: @shops %>
+  Your shop missing?
+  <%= link_to("Click to add a new shop", new_shop_path) %>
+  <%= f.input :why, placeholder: "Why did you get this tattoo?" %>
+  <%= f.button :submit %>
 <% end %>
+

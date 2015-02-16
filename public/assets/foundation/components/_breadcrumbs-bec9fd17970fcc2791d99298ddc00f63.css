@@ -1,0 +1,256 @@
+/* line 347, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-version {
+  font-family: "/5.5.0/";
+}
+
+/* line 351, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-small {
+  font-family: "/only screen/";
+  width: 0;
+}
+
+/* line 356, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-small-only {
+  font-family: "/only screen and (max-width: 40em)/";
+  width: 0;
+}
+
+/* line 361, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-medium {
+  font-family: "/only screen and (min-width:40.063em)/";
+  width: 40.063em;
+}
+
+/* line 366, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-medium-only {
+  font-family: "/only screen and (min-width:40.063em) and (max-width:64em)/";
+  width: 40.063em;
+}
+
+/* line 371, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-large {
+  font-family: "/only screen and (min-width:64.063em)/";
+  width: 64.063em;
+}
+
+/* line 376, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-large-only {
+  font-family: "/only screen and (min-width:64.063em) and (max-width:90em)/";
+  width: 64.063em;
+}
+
+/* line 381, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-xlarge {
+  font-family: "/only screen and (min-width:90.063em)/";
+  width: 90.063em;
+}
+
+/* line 386, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-xlarge-only {
+  font-family: "/only screen and (min-width:90.063em) and (max-width:120em)/";
+  width: 90.063em;
+}
+
+/* line 391, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-mq-xxlarge {
+  font-family: "/only screen and (min-width:120.063em)/";
+  width: 120.063em;
+}
+
+/* line 396, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+meta.foundation-data-attribute-namespace {
+  font-family: false;
+}
+
+/* line 403, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+html, body {
+  height: 100%;
+}
+
+/* line 406, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 412, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+html,
+body {
+  font-size: 100%;
+}
+
+/* line 416, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+body {
+  background: #fff;
+  color: #222;
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+  position: relative;
+  cursor: auto;
+}
+
+/* line 429, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+a:hover {
+  cursor: pointer;
+}
+
+/* line 432, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* line 434, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+img {
+  -ms-interpolation-mode: bicubic;
+}
+
+/* line 438, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+#map_canvas img,
+#map_canvas embed,
+#map_canvas object,
+.map_canvas img,
+.map_canvas embed,
+.map_canvas object {
+  max-width: none !important;
+}
+
+/* line 445, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+.left {
+  float: left !important;
+}
+
+/* line 446, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+.right {
+  float: right !important;
+}
+
+/* line 172, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table;
+}
+/* line 173, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+.clearfix:after {
+  clear: both;
+}
+
+/* line 450, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+.hide {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* line 456, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+.invisible {
+  visibility: hidden;
+}
+
+/* line 462, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+.antialiased {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* line 465, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+img {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* line 475, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+textarea {
+  height: auto;
+  min-height: 50px;
+}
+
+/* line 478, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_global.scss */
+select {
+  width: 100%;
+}
+
+/* line 118, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs {
+  display: block;
+  padding: 0.5625rem 0.875rem 0.5625rem;
+  overflow: hidden;
+  margin-left: 0;
+  list-style: none;
+  border-style: solid;
+  border-width: 1px;
+  background-color: #f4f4f4;
+  border-color: gainsboro;
+  border-radius: 3px;
+}
+/* line 122, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > * {
+  margin: 0;
+  float: left;
+  font-size: 0.6875rem;
+  line-height: 0.6875rem;
+  text-transform: uppercase;
+  color: #008CBA;
+}
+/* line 68, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *:hover a, .breadcrumbs > *:focus a {
+  text-decoration: underline;
+}
+/* line 70, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > * a {
+  color: #008CBA;
+}
+/* line 75, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *.current {
+  cursor: default;
+  color: #333333;
+}
+/* line 78, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *.current a {
+  cursor: default;
+  color: #333333;
+}
+/* line 83, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *.current:hover, .breadcrumbs > *.current:hover a, .breadcrumbs > *.current:focus, .breadcrumbs > *.current:focus a {
+  text-decoration: none;
+}
+/* line 88, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *.unavailable {
+  color: #999999;
+}
+/* line 90, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *.unavailable a {
+  color: #999999;
+}
+/* line 92, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *.unavailable:hover, .breadcrumbs > *.unavailable:hover a, .breadcrumbs > *.unavailable:focus,
+.breadcrumbs > *.unavailable a:focus {
+  text-decoration: none;
+  color: #999999;
+  cursor: default;
+}
+/* line 102, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *:before {
+  content: "/";
+  color: #AAAAAA;
+  margin: 0 0.75rem;
+  position: relative;
+  top: 1px;
+}
+/* line 110, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+.breadcrumbs > *:first-child:before {
+  content: " ";
+  margin: 0;
+}
+
+/* Accessibility - hides the forward slash */
+/* line 130, /home/scruffy/git/tatalog/vendor/ruby/gems/foundation-rails-5.5.1.0/vendor/assets/stylesheets/foundation/components/_breadcrumbs.scss */
+[aria-label="breadcrumbs"] [aria-hidden="true"]:after {
+  content: "/";
+}
