@@ -25,10 +25,11 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-
+    puts "artist params", params
     respond_to do |format|
       if @artist.save
         format.html {redirect_to session.delete(:return_to), notice: "Artist created successfully"}
+        #format.html {render :success, notice: "Artist created successfully"}        
       else
       format.html {render action: "new"}        
       end

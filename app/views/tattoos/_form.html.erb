@@ -4,11 +4,7 @@
   <%= f.input :name, placeholder: "A name/nickname for the tat" %>
   <%= f.input :artist_id, label: "Artist", prompt: "Select an artist", collection: @artists %>
   Your tattoo artist missing? 
-  <%= link_to "Click to add a new artist", new_artist_path, data: {reveal_id: "newArtistModal"} %>
-  <div id="newArtistModal" class="reveal-modal" data-reveal>
-    <h2> Add a new artist </h2>
-    <a class="close-reveal-modal">&#215;</a>
-  </div>
+  <%= link_to "Click to add a new artist", new_artist_path %>
   <fieldset>
     <legend style="color: #212121; font-size: 1.6em;">When</legend>
     <%= f.input :when, hint: "When did you get the tattoo?", label: false,
