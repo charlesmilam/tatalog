@@ -1,0 +1,11 @@
+/* line 5, /home/scruffy/git/tatalog/app/assets/stylesheets/tattoos.css.scss */
+#gallery-box {
+  position: relative;
+  width: 25%;
+  padding-bottom: 25%;
+}
+
+/* line 11, /home/scruffy/git/tatalog/app/assets/stylesheets/tattoos.css.scss */
+#gallery-content {
+  position: absolute;
+}
