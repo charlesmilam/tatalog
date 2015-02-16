@@ -66,7 +66,7 @@ class TattoosController < ApplicationController
 
   private
   def tattoo_params
-    params.require(:tattoo) .permit(:user_id, :artist_id, :shop_id, :name, :when, :why)
+    params.require(:tattoo) .permit(:user_id, :artist_id, :shop_id, :name, :when, :why, :image)
   end
 
   def set_user
@@ -81,7 +81,7 @@ class TattoosController < ApplicationController
     @artists = []
     artists = Artist.all
     artists.each do |artist|
-      @artists << [artist.first_name, artist.id]
+      @artists << [artist.name, artist.id]
     end
   end
 end

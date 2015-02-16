@@ -39,6 +39,12 @@ gem 'byebug'
 gem "foundation-rails"
 # Simple Form for form creation
 gem "simple_form"
+# For file upload, image thumbnail creation
+gem "paperclip"
+# For use with AWS
+gem "aws-sdk-v1"
+# User for securely setting envioronment variables
+gem "figaro"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
