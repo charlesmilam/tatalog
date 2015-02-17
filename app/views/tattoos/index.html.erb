@@ -14,9 +14,10 @@
         <ul class="pricing-table radius" >
           <li class="title"><a class="th radius" href=<%= user_tattoo_path(@user.id, tat.id) %>> <img src=<%= tat.image.url(:small) %>></a></li>
           <!-- <li class="price">.99</li> -->
-          <li class="price"><%= tat.why.length > 15 ? tat.why[0..15] + "..." : tat.why %></li>
+          <li class="price"><%= tat.name.length > 15 ? tat.name[0..15] + "..." : tat.name %></li>
           <li class="bullet-item">Artist: <%= @artists_info.find {|a| a[:id] == tat.artist_id}[:name] %></li>
           <li class="bullet-item">Shop: <%= @shops_info.find {|s| s[:id] == tat.shop_id}[:name] %></li>
+          <li class="bullet-item">Why: <%= tat.why %></li>
           <li class="bullet-item">Date Received: <%= tat.when %></li>
           <li class="cta-button"><a class="button round" href="#">Favorite it!</a></li>
           <!-- <li> 
