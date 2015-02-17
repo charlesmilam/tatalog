@@ -40,6 +40,11 @@ class TattoosController < ApplicationController
                   :index,
                   :show
                 ]
+  before_action :set_favorite,
+                only: [
+                  :index,
+                  :show
+                ]
 
   def index
     @tattoos = @user.tattoos.all
@@ -128,5 +133,9 @@ class TattoosController < ApplicationController
     shops.each do |shop|
       @shops_info << {id: shop.id, name: shop.name}
     end
+  end
+
+  def set_favorite
+    @favorite = Favorite.new
   end
 end
