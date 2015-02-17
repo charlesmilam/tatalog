@@ -16,6 +16,10 @@ Rails.application.routes.draw do
 
   resources :favorites
 
+  get "users/signin"
+
+  post "users/signin_attempt"
+
   get 'pages/help'
 
   get 'pages/about'

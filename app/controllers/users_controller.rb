@@ -4,7 +4,7 @@ class UsersController < ApplicationController
                   :show,
                   :edit,
                   :update,
-                  :destroy
+                  :destroy,
                 ]
 
   def index
@@ -47,6 +47,19 @@ class UsersController < ApplicationController
     @user.destroy
     respond_to do |format|
       format.html {redirect_to users_url}
+    end
+  end
+
+  def signin
+    @user = User.new
+    render action: "signin"
+  end
+
+  def signin_attempt
+    if params[:password] == @user.password
+      redirect_to user_tattoos_path
+    else
+      render action: "signin"
     end
   end
 
