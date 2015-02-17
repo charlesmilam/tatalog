@@ -4,7 +4,7 @@ class UsersController < ApplicationController
                   :show,
                   :edit,
                   :update,
-                  :destroy
+                  :destroy,
                 ]
 
   def index
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html {redirect_to @user, notice: "User was successfuly updated."}
+        format.html {redirect_to user_tattoos_path(@user), notice: "User was successfuly updated."}
       else
         format.html {render action: "edit"}
       end
