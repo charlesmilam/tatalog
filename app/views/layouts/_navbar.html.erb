@@ -1,23 +1,38 @@
 <nav class="top-bar" data-topbar>
   <ul class="title-area">
     <li class="name">
-      <h1><%= link_to("Tatalog", root_path) %></h1>
+      <h1><%= link_to("tatalog", root_path) %></h1>
     </li>
-    <li class="toggle-topbar menu-icon"><a href="#"><span></span></a></li>
   </ul>
-
+  
   <section class="top-bar-section">
-    <!-- Right Nav Section -->
     <ul class="right">
-      <li class="has-dropdown">
-        <a href="#">Menu</a>
+      <li class="has-dropdown"><%= link_to("Organize", "#") %>
         <ul class="dropdown">
-          <li><%= link_to("First link in dropdown", "#") %></li>
-          <li><%= link_to("Second link in dropdown", user_tattoos_path(user_id: 1)) %></li>
-          <li><%= link_to("Third link in dropdown", users_path(user_id: 1)) %></li>
-          <li><a href="/users/1/tattoos">A plain text link</a></li>
+          <li><%= link_to("See them all", "#") %></li>
+          <li><%= link_to("Add a tattoo", "#") %></li>
+          <li><%= link_to("Add a shop", "#") %></li>
+          <li><%= link_to("Add an artist", "#") %></li>
+        </ul>
+      </li>
+      <li class="has-dropdown"><%= link_to("Browse", "#") %>
+        <ul class="dropdown">
+          <li><%= link_to("Other user's tattoos", "#") %></li>
+          <li><%= link_to("Top tattoos", "#") %></li>
+          <li><%= link_to("Top artists", "#") %></li>
+          <li><%= link_to("Top shops", "#") %></li>
+        </ul>
+      </li>
+      <li class="has-dropdown"><%= link_to("Menu", "#") %>
+        <ul class="dropdown">
+          <li><%= link_to("Sign out", "#") %></li>
         </ul>
       </li>
     </ul>
   </section>
-</nav>
+</nav>     
+     
+     
+     
+     
+      
