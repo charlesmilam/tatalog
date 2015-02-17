@@ -105,7 +105,7 @@ class TattoosController < ApplicationController
     @artists = []
     artists = Artist.all
     artists.each do |artist|
-      @artists << [artist.id, artist.name]
+      @artists << [artist.name, artist.id]
     end
     puts "artists", @artists
   end
