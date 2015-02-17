@@ -1,15 +1,6 @@
 <div class="row">
 <div class="large-4 columns"></div>
 <div class="small-12 large-8 columns">
-  <!-- <ul class="clearing-thumbs" data-clearing>
-    <% @tattoos.each do |tat| %>
-      <li><a class="th" href=<%= tat.image.url %>>
-        <img data-caption=<%= tat.why %>
-        src=<%= tat.image.url(:small) %>>
-        </a>
-      </li>
-    <% end %>
-  </ul> -->
   <ul class="small-block-grid-2">
     <% @tattoos.each do |tat| %>
       <li>
@@ -21,6 +12,13 @@
           <li class="bullet-item">Shop: <%= @shops_info.find {|s| s[:id] == tat.shop_id}[:name] %></li>
           <li class="bullet-item">Date Received: <%= tat.when %></li>
           <li class="cta-button"><a class="button round" href="#">Favorite it!</a></li>
+          <!-- <li> 
+            <%= simple_form_for @favorite do |f| %>
+              <% f.input :user_id, as: :hidden, input_html: {value: @user.id} %>
+              <% f.input :tattoo_id, as: :hidden, input_html: {value: tat.id} %>
+              <%= f.button :submit, "Favorite it!", class: "button" %>
+            <% end %> 
+          </li> -->
         </ul>
       </li>
   <% end %>
