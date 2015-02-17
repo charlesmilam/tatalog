@@ -1,5 +1,29 @@
-<ul class="clearing-thumbs" data-clearing>
-  <% @tattoos.each do |tat| %>
-    <li><a href=<%= tat.image.url %>><img src=<%= tat.image.url(:small) %>></a></li>
+<div class="row">
+<div class="large-4 columns"></div>
+<div class="small-12 large-8 columns">
+  <!-- <ul class="clearing-thumbs" data-clearing>
+    <% @tattoos.each do |tat| %>
+      <li><a class="th" href=<%= tat.image.url %>>
+        <img data-caption=<%= tat.why %>
+        src=<%= tat.image.url(:small) %>>
+        </a>
+      </li>
+    <% end %>
+  </ul> -->
+  <ul class="small-block-grid-2">
+    <% @tattoos.each do |tat| %>
+      <li>
+        <ul class="pricing-table radius" >
+          <li class="title"><a class="th radius" href=<%= tat.image.url %>> <img src=<%= tat.image.url(:small) %>></a></li>
+          <!-- <li class="price">.99</li> -->
+          <li class="description"><%= tat.why %></li>
+          <li class="bullet-item">Artist: <%= @artists_info.find {|a| a[:id] == tat.artist_id}[:name] %></li>
+          <li class="bullet-item">Shop: <%= @shops_info.find {|s| s[:id] == tat.shop_id}[:name] %></li>
+          <li class="bullet-item">Date Received: <%= tat.when %></li>
+          <li class="cta-button"><a class="button round" href="#">Favorite it!</a></li>
+        </ul>
+      </li>
   <% end %>
-</ul>
+  </ul>
+  </div>
+</div>
