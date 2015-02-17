@@ -129,8 +129,8 @@ $font-weight-bold: bold !default;
 // $info-color: #a0d3e8;
 
 // We use these to control various global styles
-$body-bg: $darkPrimaryColor;
-$body-font-color: $lightPrimaryColor;
+$body-bg: $textPrimaryColor;
+$body-font-color: $primaryColor;
 $body-font-family: $font-family-sans-serif;
 $body-font-weight: $font-weight-normal;
 $body-font-style: normal;
@@ -218,7 +218,7 @@ $header-font-color: $primaryTextColor;
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
-$h1-font-reduction: rem-calc(15) !default;
+$h1-font-reduction: rem-calc(25) !default;
 // $h2-font-reduction: rem-calc(10) !default;
 // $h3-font-reduction: rem-calc(5) !default;
 // $h4-font-reduction: rem-calc(5) !default;
@@ -260,13 +260,13 @@ $small-font-size: 50%;
 // We use these to style anchors
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
-$anchor-font-color: $textPrimaryColor;
+$anchor-font-color: $darkPrimaryColor;
 $anchor-font-color-hover: $secondaryTextColor;
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
 // $hr-border-style: solid;
-// $hr-border-color: $gainsboro;
+$hr-border-color: $dividerColor;
 // $hr-margin: rem-calc(20);
 
 // We use these to style lists
@@ -1374,7 +1374,7 @@ $topbar-bg: $topbar-bg-color;
 
 // Height and margin
 $topbar-height: rem-calc(65);
-// $topbar-margin-bottom: 0;
+$topbar-margin-bottom: 7;
 
 // Controlling the styles for the title in the top bar
 $topbar-title-weight: $font-weight-bold;
