@@ -23,15 +23,22 @@ class TattoosController < ApplicationController
                   :index,
                   :show
                 ]
-  # before_action :set_artist,
-  #               only: [
-  #                 :index,
-  #                 :show
-  #               ]
+  before_action :set_artists_info,
+                only: [
+                  :index,
+                  :show
+                ]
   before_action :set_shops,
                 only: [
                   :new,
-                  :edit
+                  :edit,
+                  :index,
+                  :show
+                ]
+  before_action :set_shops_info,
+                only: [
+                  :index,
+                  :show
                 ]
 
   def index
@@ -93,22 +100,33 @@ class TattoosController < ApplicationController
     @artists = []
     artists = Artist.all
     artists.each do |artist|
-      @artists << [artist.name, artist.id]
+      @artists << [artist.id, artist.name]
     end
     puts "artists", @artists
   end
 
-  # def set_artist
-  #   puts "tattoo params", params
-  #   puts "artists", @artists
-  #   @artist = Artist.find(params[:user_id])
-  # end
+  def set_artists_info
+    @artists_info = []
+    artists = Artist.all
+    artists.each do |artist|
+      @artists_info << {id: artist.id, name: artist.name}
+    end
+    puts "artists info", @artists_info
+  end
 
   def set_shops
     @shops = []
     shops = Shop.all
     shops.each do |shop|
       @shops << [shop.name, shop.id]
+    end
+  end
+
+  def set_shops_info
+    @shops_info = []
+    shops = Shop.all
+    shops.each do |shop|
+      @shops_info << {id: shop.id, name: shop.name}
     end
   end
 end
