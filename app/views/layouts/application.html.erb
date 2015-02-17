@@ -13,13 +13,15 @@
   </head>
 
   <body> 
-    <header>
-      <div class="small-12 medium-12 large-12">
-        <%= render "layouts/navbar" %>
-      </div>
-    </header>
+    <div class="small-12 medium-12 large-12">
+      <%= render "layouts/navbar" %>
+    </div>
+
     <main role:"main">
       <%= yield %>
     </main>
+    <footer>
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>
