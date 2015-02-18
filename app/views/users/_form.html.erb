@@ -1,6 +1,7 @@
 <%= simple_form_for @user do |f| %>
   <%= f.input :name, label: "User Name", placeholder: "User Name" %>
   <%= f.input :email, placeholder: "email@example.com" %>
-  <%= f.input :password %>
-  <%= f.button :submit %>
+  <%= f.input :password, placeholder: "minimum of 6 characters" %>
+  <%= f.input :password_confirmation, label: "Confirm Password", placeholder: "re-enter password" %>
+  <%= f.button :submit, "Create Account", class: "round" %>
 <% end %>
