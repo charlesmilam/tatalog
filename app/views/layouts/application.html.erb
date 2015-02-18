@@ -13,17 +13,21 @@
   </head>
 
   <body> 
+    <!-- Topbar -->
     <div class="small-12 medium-12 large-12">
       <%= render "layouts/navbar" %>
     </div>
+    <!-- Header w/ flash container -->
     <header>
       <div class="small-12 large-12 columns">
         <%= render "layouts/flash" %>
       </div>
     </header>
+    <!-- Main -->
     <main role:"main">
       <%= yield %>
     </main>
+    <!-- Footer -->
     <footer>
       <%= render "layouts/footer" %>
     </footer>

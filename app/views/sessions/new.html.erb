@@ -1,11 +1,11 @@
 <div class="row">
   <div class="large-2 columns"></div>
   <div class="small-12 large-8 columns">
-    <h1>Signin</h1>
+    <h1>Sign in</h1>
     <%= simple_form_for :session, url: signin_path do |f| %>
       <%= f.input :email, placeholder: "email@example.com" %>
       <%= f.input :password, placeholder: "your password" %>
-      <%= f.submit "Signin", class: "button round"%>
+      <%= f.submit "Sign in", class: "button round"%>
     <% end %>
 
     <p>No account? <%= link_to("Sign up here", new_user_path) %></p>

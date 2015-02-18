@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         sign_in @user
         format.html {redirect_to @user, notice: "Welcome to tatalog!"}
       else
-        flash.now[:danger] = "Signin was unsuccessful. Please try again."
+        flash.now[:danger] = "Sign in was unsuccessful. Please try again."
         format.html {render action: "new"}
       end
     end
