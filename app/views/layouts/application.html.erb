@@ -16,7 +16,11 @@
     <div class="small-12 medium-12 large-12">
       <%= render "layouts/navbar" %>
     </div>
-
+    <header>
+       <% flash.each do |message_type, message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
+    </header>
     <main role:"main">
       <%= yield %>
     </main>

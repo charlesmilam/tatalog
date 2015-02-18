@@ -23,7 +23,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html {redirect_to @user, notice: "User sucessfully created."}
+        format.html {redirect_to @user, notice: "Welcome to tatalog!"}
       else
         format.html {render action: "new"}
       end
