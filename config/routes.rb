@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
-
   root "pages#home"
 
   resources :users do
     resources :tattoos
   end
 
-  resources :tattoos do
-    resources :tattoo_pics
-  end
+  resources :tattoos
 
   resources :artists
 
@@ -16,9 +13,9 @@ Rails.application.routes.draw do
 
   resources :favorites
 
-  get "pages/signin"
-
-  post "pages/signin_attempt"
+  get 'signin' => "sessions#new"
+  post "signin" => "sessions#create"
+  delete "signout" => "sessions#destroy"
 
   get 'pages/help'
 
