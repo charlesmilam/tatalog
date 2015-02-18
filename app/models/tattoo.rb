@@ -19,5 +19,5 @@ class Tattoo < ActiveRecord::Base
   validates :shop, presence: true
 
   validates_attachment_content_type :image, content_type: /^image\/(png|gif|jpeg|jpg)/
-  validates_with AttachmentSizeValidator, :attributes => :image, :less_than => 1.megabytes
+  validates_with AttachmentSizeValidator, :attributes => :image, :less_than => 2.megabytes
 end
