@@ -8,14 +8,16 @@
     <ul >
       <% @users.each do |user| %>
         <li><h3><%= user.user_name %></h3></li>
-          <ul class="clearing-thumbs" data-clearing>
-            <% user.tattoos.each do |tat| %>
-              <li><a href=<%= tat.image %>>
-                <img data-caption=<%= tat.name %> 
-                src=<%= tat.image(:thumb) %> 
-                class="th radius"></a>
-              </li>
-            <% end %>  
+          <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
+            <ul class="clearing-thumbs" data-clearing>
+              <% user.tattoos.each do |tat| %>
+                <li><a href=<%= tat.image %>>
+                  <img data-caption=<%= tat.name %> 
+                  src=<%= tat.image(:thumb) %> 
+                  class="th radius"></a>
+                </li>
+              <% end %>  
+            </ul>
           </ul>
       <% end %>
     </ul>
