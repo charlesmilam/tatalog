@@ -46,7 +46,7 @@ gem "aws-sdk-v1"
 # User for securely setting envioronment variables
 gem "figaro"
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt'
 
 # Use unicorn as the app server
 # gem 'unicorn'

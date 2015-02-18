@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user_list = [
-  ["SusanO", "susano@example.com", "abc123"],
-  ["Chuck", "chuck@example.com", "abc123"],
-  ["Grace", "grace@example.com", "abc123"],
-  ["Alli", "alli@example.com", "abc123"],
-  ["Digby", "digby@example.com", "abc123"],
-  ["Whittie", "whittie@example.com", "abc123"]
+  ["SusanO", "susano@example.com", "abc123", "abc123"],
+  ["Chuck", "chuck@example.com", "abc123", "abc123"],
+  ["Grace", "grace@example.com", "abc123", "abc123"],
+  ["Alli", "alli@example.com", "abc123", "abc123"],
+  ["Digby", "digby@example.com", "abc123", "abc123"],
+  ["Whittie", "whittie@example.com", "abc123", "abc123"]
 ]
 
 tattoo_list = [
@@ -61,8 +61,8 @@ tattoo_pic_list = [
   [10, "description tat 10", "http://36.media.tumblr.com/d5f5e6a189a20394c0e2effb991cbe0c/tumblr_ni0wtuKZtC1r2m7jgo1_500.jpg"] 
 ]
 
-user_list.each do |user_name, email, password|
-  User.create user_name: user_name, email: email, password: password
+user_list.each do |name, email, password, password_confirmation|
+  User.create name: name, email: email, password: password, password_confirmation: password_confirmation
 end
 
 shop_list.each do |name, address, city, state, zip, url|
