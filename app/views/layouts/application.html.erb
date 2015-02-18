@@ -16,7 +16,15 @@
     <div class="small-12 medium-12 large-12">
       <%= render "layouts/navbar" %>
     </div>
-
+    <header>
+      <div class="small-12 large-12 columns">
+        <% flash.each do |message_type, message| %>
+          <div data-alert class="alert-box secondary radius">
+            <%= message %>
+          </div>
+        <% end %>
+      </div>
+    </header>
     <main role:"main">
       <%= yield %>
     </main>
