@@ -23,8 +23,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        sign_in @user
         format.html {redirect_to @user, notice: "Welcome to tatalog!"}
       else
+        flash.now[:danger] = "Signin was unsuccessful. Please try again."
         format.html {render action: "new"}
       end
     end
@@ -36,7 +38,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html {redirect_to user_tattoos_path(@user), notice: "User was successfuly updated."}
+        format.html {redirect_to @user, notice: "User was successfuly updated."}
       else
         format.html {render action: "edit"}
       end

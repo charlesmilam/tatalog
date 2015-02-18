@@ -18,11 +18,7 @@
     </div>
     <header>
       <div class="small-12 large-12 columns">
-        <% flash.each do |message_type, message| %>
-          <div data-alert class="alert-box secondary radius">
-            <%= message %>
-          </div>
-        <% end %>
+        <%= render "layouts/flash" %>
       </div>
     </header>
     <main role:"main">
