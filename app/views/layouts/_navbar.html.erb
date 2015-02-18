@@ -9,26 +9,32 @@
   <section class="top-bar-section">
     <ul class="right">
       <li><%= link_to("Home", root_path) %></li>
-      <li class="has-dropdown"><%= link_to("Organize", "#") %>
+      <% if signed_in? %>
+        <li class="has-dropdown"><%= link_to("Organize", "#") %>
+          <ul class="dropdown">
+            <li><%= link_to("See them all", "#") %></li>
+            <li><%= link_to("Add a tattoo", "#") %></li>
+            <li><%= link_to("Add a shop", "#") %></li>
+            <li><%= link_to("Add an artist", "#") %></li>
+          </ul>
+        </li>
+        <li class="has-dropdown"><%= link_to("Browse", "#") %>
+          <ul class="dropdown">
+            <li><%= link_to("Other user's tattoos", "#") %></li>
+            <li><%= link_to("Top tattoos", "#") %></li>
+            <li><%= link_to("Top artists", "#") %></li>
+            <li><%= link_to("Top shops", "#") %></li>
+          </ul>
+        </li>
+      
+      <li class="has-dropdown"><%= link_to(current_user.name, "#") %>
         <ul class="dropdown">
-          <li><%= link_to("See them all", "#") %></li>
-          <li><%= link_to("Add a tattoo", "#") %></li>
-          <li><%= link_to("Add a shop", "#") %></li>
-          <li><%= link_to("Add an artist", "#") %></li>
+        <li><%= link_to("Profile", current_user) %></li>
+        <li><%= link_to("Sign out", signout_path, method: "delete") %></li>
         </ul>
-      </li>
-      <li class="has-dropdown"><%= link_to("Browse", "#") %>
-        <ul class="dropdown">
-          <li><%= link_to("Other user's tattoos", "#") %></li>
-          <li><%= link_to("Top tattoos", "#") %></li>
-          <li><%= link_to("Top artists", "#") %></li>
-          <li><%= link_to("Top shops", "#") %></li>
-        </ul>
-      </li>
-      <li class="has-dropdown"><%= link_to("Signin/Signout", "#") %>
-        <ul class="dropdown">
-        <li><%= link_to("Signout", root_path) %></li>
-        </ul>
+      <% else %>
+        <li><%= link_to("Sign in", signin_path) %>
+      <% end %>
     </ul>
   </section>
 </nav>     
