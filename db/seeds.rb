@@ -7,12 +7,12 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 user_list = [
-  ["SusanO", "susano@example.com", "abc123"],
-  ["Chuck", "chuck@example.com", "abc123"],
-  ["Grace", "grace@example.com", "abc123"],
-  ["Alli", "alli@example.com", "abc123"],
-  ["Digby", "digby@example.com", "abc123"],
-  ["Whittie", "whittie@example.com", "abc123"]
+  ["SusanO", "susano@example.com", "abc123", "abc123"],
+  ["Chuck", "chuck@example.com", "abc123", "abc123"],
+  ["Grace", "grace@example.com", "abc123", "abc123"],
+  ["Alli", "alli@example.com", "abc123", "abc123"],
+  ["Digby", "digby@example.com", "abc123", "abc123"],
+  ["Whittie", "whittie@example.com", "abc123", "abc123"]
 ]
 
 tattoo_list = [
