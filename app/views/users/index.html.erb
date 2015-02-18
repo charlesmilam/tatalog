@@ -4,9 +4,10 @@
   </div>
 </div>
 <div class="row">
-  <div class="small-12 columns">
+  <div class="small-12 large-10 columns">
     <ul >
       <% @users.each do |user| %>
+        <div class="panel radius">
         <li><h3><%= user.user_name %></h3></li>
           <ul class="small-block-grid-2 medium-block-grid-3 large-block-grid-4">
             <ul class="clearing-thumbs" data-clearing>
@@ -19,7 +20,9 @@
               <% end %>  
             </ul>
           </ul>
+          </div>
       <% end %>
     </ul>
   </div>
+  <div class="large-2 columns"></div>
 </div>
