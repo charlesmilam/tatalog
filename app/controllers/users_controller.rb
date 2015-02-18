@@ -23,8 +23,10 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        sign_in @user
         format.html {redirect_to @user, notice: "Welcome to tatalog!"}
       else
+        flash.now[:danger] = "Signin was unsuccessful. Please try again."
         format.html {render action: "new"}
       end
     end
