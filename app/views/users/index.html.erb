@@ -10,7 +10,7 @@
         <li><h3><%= user.user_name %></h3></li>
           <ul class="clearing-thumbs" data-clearing>
             <% user.tattoos.each do |tat| %>
-              <li><a href=<%= tat.image %>><img src=<%= tat.image(:thumb) %> class="th"></a></li>
+              <li><a href=<%= tat.image %>><img data-caption=<%= tat.name + "\n" + tat.why %> src=<%= tat.image(:thumb) %> class="th radius"></a></li>
             <% end %>  
           </ul>
       <% end %>
