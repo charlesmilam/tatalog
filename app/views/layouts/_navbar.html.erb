@@ -12,15 +12,15 @@
       <% if signed_in? %>
         <li class="has-dropdown"><%= link_to("Organize", "#") %>
           <ul class="dropdown">
-            <li><%= link_to("See them all", "#") %></li>
-            <li><%= link_to("Add a tattoo", "#") %></li>
-            <li><%= link_to("Add a shop", "#") %></li>
-            <li><%= link_to("Add an artist", "#") %></li>
+            <li><%= link_to("See them all", user_tattoos_path(current_user)) %></li>
+            <li><%= link_to("Add a tattoo", new_user_tattoo_path(current_user)) %></li>
+            <li><%= link_to("Add a shop", new_shop_path) %></li>
+            <li><%= link_to("Add an artist", new_artist_path) %></li>
           </ul>
         </li>
         <li class="has-dropdown"><%= link_to("Browse", "#") %>
           <ul class="dropdown">
-            <li><%= link_to("Other user's tattoos", "#") %></li>
+            <li><%= link_to("Other user's tattoos", users_path) %></li>
             <li><%= link_to("Top tattoos", "#") %></li>
             <li><%= link_to("Top artists", "#") %></li>
             <li><%= link_to("Top shops", "#") %></li>
