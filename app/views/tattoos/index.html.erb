@@ -45,6 +45,7 @@
       data: {favorite: {user_id: <%= @user.id %>, tattoo_id: tatId}},
       success: function (result) {
         elem.addClass("disabled")
+        elem.text("Favorited")
       },
       error: function (result){
         console.log(result)
