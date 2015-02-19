@@ -10,6 +10,7 @@
 <div class="small-12 large-8 columns">
   <ul class="small-block-grid-2">
     <% @tattoos.each do |tat| %>
+      <% @tat = tat %>
       <li>
         <ul class="pricing-table radius" data-equlizer-watch>
           <li class="title"><a class="th radius" href=<%= user_tattoo_path(@user.id, tat.id) %>> <img src=<%= tat.image.url(:small) %>></a></li>
@@ -19,30 +20,38 @@
           <li class="bullet-item">Shop: <%= @shops_info.find {|s| s[:id] == tat.shop_id}[:name] %></li>
           <li class="bullet-item">Why: <%= tat.why %></li>
           <li class="bullet-item">Date Received: <%= tat.when %></li>
-          <li class="cta-button"><a class="button round" id="fave-btn" href="#">Favorite it!</a></li>
+          <li class="cta-button">
+            <a class="button round fave-btn" href="#"
+               data-tat-id="<%= tat.id %>"
+            >
+              Favorite it!
+            </a>
+          </li>
         </ul>
       </li>
-      <input type="hidden" id="user-id" value=<%= @user.id %>>
-      <input type="hidden" id="tat-id" value=<%= tat.id %>>
+      <!-- <input type="hidden" id="user-id" value=> -->
+      <!-- <input type="hidden" id="tat-id" value=<%= @tat.id %>> -->
   <% end %>
   </ul>
   </div>
 </div>
 <script type="text/javascript">
-  $(document).ready(function(){
-    $(this).on("click", function(e){
-      e.preventDefault()
-      $.ajax({
-        url: "/favorites",
-        type: "POST",
-        data: {favorite: {user_id: $("#user-id").val(), tattoo_id: $("#tat-id").val()}},
-        success: function (result) {
-          $("#fave-btn").addClass("disabled")
-        },
-        error: function (result){
-          console.log(result)
-        }
-      })
+  $(document).on("click", ".fave-btn", function(e){
+    e.preventDefault()
+    var tatId = $(this).data('tat-id')
+    // var tatId = $(this).attr('data-tat-id')
+    console.log("Favriting tat id =", tatId)
+    $.ajax({
+      url: "/favorites",
+      type: "POST",
+      // data: {favorite: {user_id: $("#user-id").val(), tattoo_id: $("#tat-id").val()}},
+      data: {favorite: {user_id: <%= @user.id %>, tattoo_id: tatId}},
+      success: function (result) {
+        $("#fave-btn").addClass("disabled")
+      },
+      error: function (result){
+        console.log(result)
+      }
     })
   })
 </script>
