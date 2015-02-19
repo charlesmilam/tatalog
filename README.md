@@ -26,7 +26,7 @@ A User can...
 
 * Sign up and sign in
 * Create/view/edit/remove tattoos, tattoo artists, and tattoo shops.
-* Favorite there own tatttoos.
+* Favorite there own tattoos.
 * Browse other users tattoos, and favorite them
 
 #Todos
