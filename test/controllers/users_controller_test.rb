@@ -15,9 +15,10 @@ class UsersControllerTest < ActionController::TestCase
 
     @params = {
       user:{
-        user_name: "tester1",
+        name: "tester1",
         email: "tester1@test.com",
-        password: "abc123"
+        password: "abc123",
+        password_confirmation: "abc123"
       }
     }
   end

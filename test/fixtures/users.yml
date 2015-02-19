@@ -6,23 +6,26 @@
 #
 
 # ************* User Table Schema ******************
-# t.string   "user_name"
+# t.string   "name"
 # t.string   "email"
 # t.string   "password"
 # t.datetime "created_at"
 # t.datetime "updated_at"
 
 user1:
-  user_name: Tester 1
+  name: Tester 1
   email: tester1@email.com
   password: abc123
+  password_confirmation: abc123
 
 user2:
-  user_name: Tester 2
+  name: Tester 2
   email: tester2@email.com
   password: abc123
+  password_confirmation: abc123
 
 user3:
-  user_name: Tester 3
+  name: Tester 3
   email: tester3@email.com
   password: abc123  
+  password_confirmation: abc123
