@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" data-equalizer>
 <div class="large-4 columns">
   <div class="panel radius">
     <img src="https://s3.amazonaws.com/tatalog-milam-dev/tattoos/images/noavatar.png">
@@ -11,7 +11,7 @@
   <ul class="small-block-grid-2">
     <% @tattoos.each do |tat| %>
       <li>
-        <ul class="pricing-table radius" >
+        <ul class="pricing-table radius" data-equlizer-watch>
           <li class="title"><a class="th radius" href=<%= user_tattoo_path(@user.id, tat.id) %>> <img src=<%= tat.image.url(:small) %>></a></li>
           <!-- <li class="price">.99</li> -->
           <li class="price"><%= tat.name.length > 15 ? tat.name[0..15] + "..." : tat.name %></li>
