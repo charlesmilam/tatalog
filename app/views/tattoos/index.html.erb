@@ -29,8 +29,6 @@
           </li>
         </ul>
       </li>
-      <!-- <input type="hidden" id="user-id" value=> -->
-      <!-- <input type="hidden" id="tat-id" value=<%= @tat.id %>> -->
   <% end %>
   </ul>
   </div>
@@ -39,12 +37,10 @@
   $(document).on("click", ".fave-btn", function(e){
     e.preventDefault()
     var tatId = $(this).data('tat-id')
-    // var tatId = $(this).attr('data-tat-id')
-    console.log("Favriting tat id =", tatId)
+    console.log("Favoriting tat id =", tatId)
     $.ajax({
       url: "/favorites",
       type: "POST",
-      // data: {favorite: {user_id: $("#user-id").val(), tattoo_id: $("#tat-id").val()}},
       data: {favorite: {user_id: <%= @user.id %>, tattoo_id: tatId}},
       success: function (result) {
         $("#fave-btn").addClass("disabled")
