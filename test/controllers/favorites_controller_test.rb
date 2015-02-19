@@ -13,7 +13,7 @@ class FavoritesControllerTest < ActionController::TestCase
   setup do
     # @user = users(:user1)
     # @tattoo = tattoos(:tattoo1)
-    @user = User.create({user_name: "test", email: "test", password: "test"})
+    @user = User.create({name: "test", email: "test", password: "test", password_confirmation: "test"})
     @tattoo = Tattoo.create({user_id: 1, artist_id: 1, shop_id: 1})
     @favorite = favorites(:favorite1)
 
