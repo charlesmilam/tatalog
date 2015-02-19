@@ -4,22 +4,19 @@ Project Overview
 Organize your ink. Upload an image of your tattoo. Add information, such as the artist, the shop where you got the tattoo, or the inspiration behind your tattoo. Browse other user's tattoos. Tag your favorites. View most favorited tattoos, artists, and shops.This was my capstone individual project as a student at MakerSquare.
 
 #Technology
-
--Server side: 
-  -Ruby on Rails 
-  -SQLite for test/development, Postgresql for deployment to Heroku
-  -BCrypt for secure password storage
-  -Simple_Form for ease in form creation
-  -Paperclip for image upload to S3, and creation of thumbnails
-  -Figaro for aid in managing environmnt variables.
-
--Client side:
-  -Foundation 5, CSS framework with web responsiveness built in
-  -SCSS
-  -jQuery
-
--API
-  -Amazon S3 for image storage
+*Server side: 
+  ..*Ruby on Rails 
+  ..*SQLite for test/development, Postgresql for deployment to Heroku
+  ..*BCrypt for secure password storage
+  ..*Simple_Form for ease in form creation
+  ..*Paperclip for image upload to S3, and creation of thumbnails
+  ..*Figaro for aid in managing environmnt variables.
+*Client side:
+  ..*Foundation 5, CSS framework with web responsiveness built in
+  ..*SCSS
+  ..*jQuery
+*API
+  ..*Amazon S3 for image storage
 
 #User Stories
 
