@@ -21,9 +21,9 @@ class FavoritesController < ApplicationController
     #favorite = Favorite.new(favorite_params)
 
     if Favorite.create(favorite_params)
-      render status: :success, notice: "Favorite sucessfully added."
+      flash.now[:success] = "Favorite sucessfully added."
     else
-      render status: :error, notice: "Unable to add as favorite."
+      flash.now[:danger] = "Unable to add as favorite."
     end
   end
 

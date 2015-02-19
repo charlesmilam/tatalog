@@ -19,17 +19,31 @@
           <li class="bullet-item">Shop: <%= @shops_info.find {|s| s[:id] == tat.shop_id}[:name] %></li>
           <li class="bullet-item">Why: <%= tat.why %></li>
           <li class="bullet-item">Date Received: <%= tat.when %></li>
-          <li class="cta-button"><a class="button round" href="#">Favorite it!</a></li>
-          <!-- <li> 
-            <%= simple_form_for @favorite do |f| %>
-              <% f.input :user_id, as: :hidden, input_html: {value: @user.id} %>
-              <% f.input :tattoo_id, as: :hidden, input_html: {value: tat.id} %>
-              <%= f.button :submit, "Favorite it!", class: "button" %>
-            <% end %> 
-          </li> -->
+          <li class="cta-button"><a class="button round" id="fave-btn" href="#">Favorite it!</a></li>
+          
         </ul>
       </li>
+      <input type="hidden" id="user-id" value=<%= @user.id %>>
+      <input type="hidden" id="tat-id" value=<%= tat.id %>>
   <% end %>
   </ul>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(document).on("click", "#fave-btn", function(e){
+      e.preventDefault()
+      $.ajax({
+        url: "/favorites",
+        type: "POST",
+        data: {favorite: {user_id: $("#user-id").val(), tattoo_id: $("#tat-id").val()}},
+        success: function (result) {
+          $("#fave-btn").addClass("disabled")
+        },
+        error: function (result){
+          console.log(result)
+        }
+      })
+    })
+  })
+</script>
