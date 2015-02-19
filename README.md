@@ -1,5 +1,5 @@
 #Tatalog - organize your ink
-Project Overview
+*Project Overview*
 
 Organize your ink. Upload an image of your tattoo. Add information, such as the artist, the shop where you got the tattoo, or the inspiration behind your tattoo. Browse other user's tattoos. Tag your favorites. View most favorited tattoos, artists, and shops.This was my capstone individual project as a student at MakerSquare.
 
@@ -16,7 +16,7 @@ Organize your ink. Upload an image of your tattoo. Add information, such as the 
   * Foundation 5, CSS framework with web responsiveness built in
   * SCSS
   * jQuery
-  
+
 ###API
   * Amazon S3 for image storage
 
@@ -24,10 +24,10 @@ Organize your ink. Upload an image of your tattoo. Add information, such as the 
 
 A User can...
 
-Sign up and sign in
-Create/view/edit/remove tattoos, tattoo artists, and tattoo shops.
-Favorite there own tatttoos.
-Browse other users tattoos, and favorite them
+* Sign up and sign in
+* Create/view/edit/remove tattoos, tattoo artists, and tattoo shops.
+* Favorite there own tatttoos.
+* Browse other users tattoos, and favorite them
 
 #Todos
 
