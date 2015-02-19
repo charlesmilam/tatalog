@@ -37,13 +37,14 @@
   $(document).on("click", ".fave-btn", function(e){
     e.preventDefault()
     var tatId = $(this).data('tat-id')
+    var elem = $(this)
     console.log("Favoriting tat id =", tatId)
     $.ajax({
       url: "/favorites",
       type: "POST",
       data: {favorite: {user_id: <%= @user.id %>, tattoo_id: tatId}},
       success: function (result) {
-        $(this).addClass("disabled")
+        elem.addClass("disabled")
       },
       error: function (result){
         console.log(result)
