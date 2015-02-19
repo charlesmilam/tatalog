@@ -10,6 +10,7 @@
 <div class="small-12 large-8 columns">
   <ul class="small-block-grid-2">
     <% @tattoos.each do |tat| %>
+      <% @tat = tat %>
       <li>
         <ul class="pricing-table radius" data-equlizer-watch>
           <li class="title"><a class="th radius" href=<%= user_tattoo_path(@user.id, tat.id) %>> <img src=<%= tat.image.url(:small) %>></a></li>
@@ -19,17 +20,34 @@
           <li class="bullet-item">Shop: <%= @shops_info.find {|s| s[:id] == tat.shop_id}[:name] %></li>
           <li class="bullet-item">Why: <%= tat.why %></li>
           <li class="bullet-item">Date Received: <%= tat.when %></li>
-          <li class="cta-button"><a class="button round" href="#">Favorite it!</a></li>
-          <!-- <li> 
-            <%= simple_form_for @favorite do |f| %>
-              <% f.input :user_id, as: :hidden, input_html: {value: @user.id} %>
-              <% f.input :tattoo_id, as: :hidden, input_html: {value: tat.id} %>
-              <%= f.button :submit, "Favorite it!", class: "button" %>
-            <% end %> 
-          </li> -->
+          <li class="cta-button">
+            <a class="button round fave-btn" href="#"
+               data-tat-id="<%= tat.id %>"
+            >
+              Favorite it!
+            </a>
+          </li>
         </ul>
       </li>
   <% end %>
   </ul>
   </div>
 </div>
+<script type="text/javascript">
+  $(document).on("click", ".fave-btn", function(e){
+    e.preventDefault()
+    var tatId = $(this).data('tat-id')
+    console.log("Favoriting tat id =", tatId)
+    $.ajax({
+      url: "/favorites",
+      type: "POST",
+      data: {favorite: {user_id: <%= @user.id %>, tattoo_id: tatId}},
+      success: function (result) {
+        $(this).addClass("disabled")
+      },
+      error: function (result){
+        console.log(result)
+      }
+    })
+  })
+</script>
