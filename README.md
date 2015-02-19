@@ -14,22 +14,24 @@ Technology
   *Figaro for aid in managing environmnt variables.
 
 *Client side:
-  *Foundation 5
+  *Foundation 5, CSS framework with web responsiveness built in
   *SCSS
   *jQuery
+
+*API
+  *Amazon S3 for image storage
 
 User Stories
 
 A User can...
 
 Sign up and sign in
-Create/read/update/destroy lists and list items
-Make lists private for their own use or public for viewing by all users
-Share lists (private or public) with other users to read/update
-Search public lists for keywords
-Potential Additions
+Create/view/edit/remove tattoos, tattoo artists, and tattoo shops.
+Favorite there own tatttoos.
+Browse other users tattoos, and favorite them
 
-Extend search functionality to look through list items as well as titles
-Implement jQuery UI features for lists, such as the accordion style
-Create user alerts for new public lists that contain specific keywords
-Build a mobile app
+Todos
+
+Allow user to create catgory "buckets" to store tattoo ideas.
+Generation of "stats", top tattoos/artists/shops, &c.
+Ability for users to review artists/shops.
