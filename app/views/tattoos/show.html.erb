@@ -1,7 +1,10 @@
-<h1><%= @tattoo.name %></h1>
-<div class="tattoo-show">
-  <label><%= @tattoo.artist_id %></label><br>
-  <label><%= @tattoo.shop_id %></label><br>
-  <label><%= @tattoo.when %></label><br>
-  <label><%= @tattoo.why %></label>
+<div class="row">
+  <div class="small-12 columns">
+    <h1><%= @tattoo.name %></h1>
+    <div class="tattoo-show">
+      <label><img src=<%= @tattoo.image.url(:large) %>></label><br>
+      <label>Date Received: <%= @tattoo.when %></label><br>
+      <label>Why: <%= @tattoo.why %></label>
+    </div>
+  </div>
 </div>
