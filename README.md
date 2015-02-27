@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/CharlesMilam/tatalog.svg?branch=master)](https://travis-ci.org/CharlesMilam/tatalog)
 #Tatalog - organize your ink
 **Project Overview**
 
