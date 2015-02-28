@@ -1,9 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  it "has a valid name" do
+  it "has a valid factory" do
+    FactoryGirl.create(:user).should be_valid
+  end
+  xit "has a valid name" do
     #names cannot be greater than 50 characters
-    
+
   end
   xit "is invalid without a name"
   xit "has a valid email"
