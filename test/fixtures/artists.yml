@@ -16,22 +16,19 @@
 # t.datetime "updated_at"
 
 artist1:
-  first_name: Test1
-  last_name: Artist1
+  name: Test1 Artist1
   nick: TesterArt 1
   email: "test1.artist1@example.com"
   url: "http://example.com/testartist1"
 
 artist2:
-  first_name: Test2
-  last_name: Artist2
+  name: Test2 Artist2
   nick: TesterArt 2
   email: test2.artist2@example.com
   url: http://example.com/testartist2
 
 artist3:
-  first_name: Test3
-  last_name: Artist3
+  name: Test3 Artist3
   nick: TesterArt 3
   email: test3.artist3@example.com
   url: http://example.com/testartist3 

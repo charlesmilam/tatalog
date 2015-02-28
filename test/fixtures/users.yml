@@ -15,17 +15,12 @@
 user1:
   name: Tester 1
   email: tester1@email.com
-  password: abc123
-  password_confirmation: abc123
 
 user2:
   name: Tester 2
   email: tester2@email.com
-  password: abc123
-  password_confirmation: abc123
 
 user3:
   name: Tester 3
   email: tester3@email.com
-  password: abc123  
-  password_confirmation: abc123
+
