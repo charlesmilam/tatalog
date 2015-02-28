@@ -47,6 +47,8 @@ gem "aws-sdk-v1"
 gem "figaro"
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
+# Use for testing
+gem "rspec-rails", group: [:development, :test]
 
 # Use unicorn as the app server
 # gem 'unicorn'
