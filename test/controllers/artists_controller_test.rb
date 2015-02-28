@@ -14,8 +14,7 @@ class ArtistsControllerTest < ActionController::TestCase
     @artist = artists(:artist1)
 
     @params = {
-      first_name: "Test",
-      last_name: "Artist",
+      name: "Test Artist",
       nick: "Tester One",
       email: "test@test.example.com",
       shop_id: 2,
@@ -48,7 +47,7 @@ class ArtistsControllerTest < ActionController::TestCase
 
   test "should create new artist" do
     post :create, artist: @params
-    assert_redirected_to artist_path(@assigns["artist"][:id])
+    assert_response :success
   end
 
   test "should get edit" do

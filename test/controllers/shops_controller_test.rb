@@ -48,7 +48,7 @@ class ShopsControllerTest < ActionController::TestCase
 
   test "should create new shop" do
     post :create, shop: @params
-    assert_redirected_to shop_path(@assigns["shop"][:id])
+    assert_response :success
   end
 
   test "should get edit" do
