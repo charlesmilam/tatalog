@@ -47,9 +47,24 @@ gem "aws-sdk-v1"
 gem "figaro"
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-# Use for testing
-gem "rspec-rails", group: [:development, :test]
 
+group :development, :test do
+  # Use for testing
+  gem "rspec-rails"
+  # Use to generate fixture data
+  gem "factory_girl_rails"
+end
+
+group :test do
+  # Use to create names/email for factories
+  gem "faker"
+  # Use to simulate user interaction with app
+  gem "capybara"
+  # Launches browser to display what is being rendered on failed tests
+  gem "launchy"
+  # Runs tests and specs on app changes
+  gem "guard-rspec"
+end
 # Use unicorn as the app server
 # gem 'unicorn'
 
