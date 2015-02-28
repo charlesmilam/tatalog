@@ -24,8 +24,7 @@ class ShopsController < ApplicationController
 
     respond_to do |format|
       if @shop.save
-        format.html {redirect_to session[:return_to], notice: "Shop created successfuly."}
-        session.delete(:return_to)
+        format.html {redirect_to session.delete(:return_to), notice: "Shop created successfuly."}
       else
         format.html {render action: "new"}
       end
