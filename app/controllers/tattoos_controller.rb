@@ -116,7 +116,6 @@ class TattoosController < ApplicationController
     artists.each do |artist|
       @artists_info << {id: artist.id, name: artist.name}
     end
-    puts "artists info", @artists_info
   end
 
   def set_shops

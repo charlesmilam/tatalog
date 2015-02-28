@@ -66,8 +66,8 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
-    put :update, id: @user.id, user: {email: "new.email@new.com"}
-    assert_redirected_to user_url(@assigns["user"].id)
+    put :update, id: @user.id, user: {email: "new.email@new.com", password: "abc123", password_confirmation: "abc123"}
+    assert_redirected_to @user 
   end
 
   test "should get destroy" do

@@ -40,8 +40,6 @@ class FavoritesControllerTest < ActionController::TestCase
 
   test "should create favorite" do
     post :create, favorite: @params
-    #puts "request", @request.inspect
-    puts "create", @request.params, @response, @assigns
     assert_response :success
   end
 

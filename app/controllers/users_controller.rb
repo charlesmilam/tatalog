@@ -38,8 +38,10 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
+        puts "in user update success"
         format.html {redirect_to @user, notice: "User was successfuly updated."}
       else
+        puts "in user update failure"
         format.html {render action: "edit"}
       end
     end
@@ -58,6 +60,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user) .permit(:name, :email, :password_digest)
+    params.require(:user) .permit(:name, :email, :password, :password_confirmation, :password_digest)
   end
 end
