@@ -1,6 +1,5 @@
 class Tattoo < ActiveRecord::Base
   has_many :favorites
-  has_many :tattoo_pics
 
   has_attached_file :image,
                       styles: {
