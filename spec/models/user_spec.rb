@@ -4,19 +4,19 @@ RSpec.describe User, type: :model do
   it "has a valid factory" do
     expect(FactoryGirl.create(:user)).to be_valid
   end
-  it "has a valid name" do
+  it "user is invalid without a valid name" do
     #names cannot be greater than 50 characters
-    user = FactoryGirl.build(:user, name: "Susan Oestreicher")
-    expect(user.name.length).to be_between(1, 50)
+    user = FactoryGirl.build(:user, name: "Susan Oestreicher" * 4)
+    expect(user).not_to be_valid
   end
-  it "is invalid with a nil name" do
-    user = FactoryGirl.build(:user, name: "Alli Kat")
-    expect(user.name).not_to be_nil
+  it "user is invalid with a nil name" do
+    user = FactoryGirl.build(:user, name: nil)
+    expect(user).not_to be_valid
   end
 
-  it "is invalid with an empty name" do
-    user = FactoryGirl.build(:user, name: "Gracie Doodle")
-    expect(user.name).not_to be_empty
+  it "user is invalid with an empty name" do
+    user = FactoryGirl.build(:user, name: "")
+    expect(user).not_to be_valid
   end
 
   xit "has a valid email"
