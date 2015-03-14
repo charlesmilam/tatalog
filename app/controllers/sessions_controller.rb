@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_to user, notice: "Welcome back, #{user.name}!"
+      redirect_to user_tattoos_path(user), notice: "Welcome back, #{user.name}!"
     else
       flash.now[:danger] = "Signin was unsuccessful. Invalid email/password combination."
       render "new"
