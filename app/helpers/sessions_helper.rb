@@ -19,4 +19,11 @@ module SessionsHelper
   def signed_in?
     !current_user.nil?
   end
+
+  # remembers a user in a persistent session (secure cookie)
+  def remember(user)
+    user.remember
+    cookies.permanent.signed[:user_id] = user.id
+    cookies.permanent[:remember_token] = user.remember_token
+  end
 end
