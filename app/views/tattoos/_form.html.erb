@@ -2,7 +2,7 @@
   <%= f.label "Upload an image" %>
   <%= f.file_field :image, button: "Upload an image" %>
   <%= f.input :name, placeholder: "A name/nickname for the tat" %>
-  <%= f.input :artist_id, label: "Artist", prompt: "Select an artist", collection: @artists %>
+  <%= f.input :artist_id, label: "Artist", prompt: "Artist that performed tattoo", collection: @artists %>
   Your tattoo artist missing? 
   <%= link_to "Click to add a new artist", new_artist_path %>
   <fieldset>
@@ -11,7 +11,7 @@
         start_year: Date.today.year - 77, end_year: Date.today.year
     %>
   </fieldset>
-  <%= f.input :shop_id, label: "Shop", prompt: "Select a shop", collection: @shops %>
+  <%= f.input :shop_id, label: "Shop", prompt: "Shop where you received tattoo", collection: @shops %>
   Your shop missing?
   <%= link_to("Click to add a new shop", new_shop_path) %>
   <%= f.input :why, placeholder: "Why did you get this tattoo?" %>

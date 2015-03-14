@@ -3,7 +3,7 @@
   <%= f.input :nick, placeholder: "Nickname/handle for artist" %>
   <%= f.input :email, placeholder: "email@example.com" %>
   <%= f.input :url, placeholder: "http://example.com/artist-name" %>
-  <%= f.input :shop_id, label: "Shop", placeholder: "Shop where artist currently works", collection: @shops %>
+  <%= f.input :shop_id, label: "Shop", prompt: "Select shop where artist currently works", collection: @shops %>
   Your shop missing?
   <%= link_to("Click to add a new shop", new_shop_path) %><br>
   <%= f.button :submit, class: "round" %>
