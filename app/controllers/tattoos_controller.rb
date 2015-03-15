@@ -153,7 +153,9 @@ class TattoosController < ApplicationController
 
   # confirms the correct user
   def correct_user
-    flash[:danger] = "You are not authorized to view that page."
-    redirect_to(root_url) unless current_user?(@user)
+    unless current_user?(@user)
+      flash[:danger] = "You are not authorized to view that page."
+      redirect_to(root_url)
+    end
   end
 end
