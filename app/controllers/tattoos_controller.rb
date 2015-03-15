@@ -45,6 +45,14 @@ class TattoosController < ApplicationController
                   :index,
                   :show
                 ]
+  before_action :signed_in_user,
+                  only: [
+                    :index,
+                    :show,
+                    :edit,
+                    :update,
+                    :destroy
+                  ]
 
   def index
     @tattoos = @user.tattoos.all
@@ -135,5 +143,13 @@ class TattoosController < ApplicationController
 
   def set_favorite
     @favorite = Favorite.new
+  end
+
+  # confirms a user is signed in
+  def signed_in_user
+    unless signed_in?
+      flash[:danger] = "Please sign in to access that page."
+      redirect_to signin_url
+    end
   end
 end
