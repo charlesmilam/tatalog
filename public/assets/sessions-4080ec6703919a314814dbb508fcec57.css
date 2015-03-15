@@ -1,0 +1,24 @@
+/* forms */
+/* line 7, /home/scruffy/git/tatalog/app/assets/stylesheets/sessions.scss */
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+/* line 10, /home/scruffy/git/tatalog/app/assets/stylesheets/sessions.scss */
+.checkbox span {
+  margin-left: 3px;
+  font-weight: normal;
+  font-size: 0.8em;
+}
+
+/* line 17, /home/scruffy/git/tatalog/app/assets/stylesheets/sessions.scss */
+#password {
+  padding-bottom: 0px;
+  margin-bottom: 10px;
+}
+
+/* line 22, /home/scruffy/git/tatalog/app/assets/stylesheets/sessions.scss */
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
