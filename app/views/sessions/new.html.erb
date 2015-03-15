@@ -4,7 +4,7 @@
     <h1>Sign in</h1>
     <%= simple_form_for :session, url: signin_path do |f| %>
       <%= f.input :email, placeholder: "email@example.com" %>
-      <%= f.input :password, placeholder: "your password" %>
+      <%= f.input :password, placeholder: "your password", id: "password" %>
       <%= f.label :remember_me, class: "checkbox inline" do %>
         <%= f.check_box :remember_me %>
         <span>Remember me on this computer</span>

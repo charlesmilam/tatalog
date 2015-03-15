@@ -7,9 +7,15 @@
   margin-top: -10px;
   margin-bottom: 10px;
   span{
-    margin-left: 20px;
+    margin-left: 3px;
     font-weight: normal;
+    font-size: 0.8em;
   }
+}
+
+#password {
+  padding-bottom: 0px;
+  margin-bottom: 10px;
 }
 
 #session_remember_me {
