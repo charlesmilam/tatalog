@@ -15,6 +15,10 @@ class UsersController < ApplicationController
                     :update,
                     :destroy
                   ]
+  before_action :correct_user,
+                  except: [
+                    :index
+                  ]
 
   def index
     @users = User.all
@@ -77,5 +81,11 @@ class UsersController < ApplicationController
       flash[:danger] = "Please sign in to access that page."
       redirect_to signin_url
     end
+  end
+
+  # confirms the correct user
+  def correct_user
+    flash[:danger] = "You are not authorized to view that page."
+    redirect_to(root_url) unless current_user?(@user)
   end
 end
