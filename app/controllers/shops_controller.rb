@@ -6,6 +6,7 @@ class ShopsController < ApplicationController
                     :update,
                     :destroy
                   ]
+  before_action :signed_in_user
 
   def index
     @shops = Shop.all
@@ -58,5 +59,13 @@ class ShopsController < ApplicationController
 
   def shop_params
     params.require(:shop) .permit(:name, :address, :city, :state, :zip, :url)
+  end
+
+   # confirms a user is signed in
+  def signed_in_user
+    unless signed_in?
+      flash[:danger] = "Please sign in to access that page."
+      redirect_to signin_url
+    end
   end
 end

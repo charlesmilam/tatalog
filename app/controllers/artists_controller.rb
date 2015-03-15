@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
                   :new,
                   :edit
                 ]
+  before_action :signed_in_user
 
   def index
     @artists = Artist.all
@@ -77,5 +78,13 @@ class ArtistsController < ApplicationController
                                     :shop_id,
                                     :url
                                     )
+  end
+
+   # confirms a user is signed in
+  def signed_in_user
+    unless signed_in?
+      flash[:danger] = "Please sign in to access that page."
+      redirect_to signin_url
+    end
   end
 end
