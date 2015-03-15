@@ -10,6 +10,8 @@ class FavoritesController < ApplicationController
                     :destroy
                   ]
 
+  before_action :signed_in_user
+
   def index
     @favorites = Favorite.all
   end
@@ -44,5 +46,13 @@ class FavoritesController < ApplicationController
 
   def favorite_params
     params.require(:favorite) .permit(:user_id, :tattoo_id)
+  end
+
+   # confirms a user is signed in
+  def signed_in_user
+    unless signed_in?
+      flash[:danger] = "Please sign in to access that page."
+      redirect_to signin_url
+    end
   end
 end
