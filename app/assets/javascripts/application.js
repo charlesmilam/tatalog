@@ -14,8 +14,11 @@
 //= require jquery_ujs
 //= require foundation
 //= require foundation/foundation.orbit
+//= require foundation/foundation.equalizer
 //= require_tree .
 
 $(function(){ 
-  $(document).foundation(); 
+  $(document).foundation({
+    equalizer: {equalize_on_stack: true} 
+  }); 
 });
