@@ -40,6 +40,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         format.html {redirect_to @user, notice: "User was successfuly updated."}
       else
+        flash.now[:danger] = "Update was unsuccessful. Check out the error(s) below and please try again."
         format.html {render action: "edit"}
       end
     end
