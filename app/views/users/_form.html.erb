@@ -3,5 +3,6 @@
   <%= f.input :email, placeholder: "email@example.com" %>
   <%= f.input :password, placeholder: "minimum of 6 characters" %>
   <%= f.input :password_confirmation, label: "Confirm Password", placeholder: "re-enter password" %>
-  <%= f.button :submit, "Create Account", class: "round" %>
+  <%= @user.new_record? ? f.button(:submit, "Create Account", class: "round") : 
+                          f.button(:submit, "Update Account", class: "round") %>
 <% end %>

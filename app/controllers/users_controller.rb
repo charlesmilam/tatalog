@@ -4,8 +4,21 @@ class UsersController < ApplicationController
                   :show,
                   :edit,
                   :update,
-                  :destroy,
+                  :destroy
                 ]
+
+  before_action :signed_in_user,
+                  only: [
+                    :index,
+                    :show,
+                    :edit,
+                    :update,
+                    :destroy
+                  ]
+  before_action :correct_user,
+                  except: [
+                    :index
+                  ]
 
   def index
     @users = User.all
@@ -40,6 +53,7 @@ class UsersController < ApplicationController
       if @user.update(user_params)
         format.html {redirect_to @user, notice: "User was successfuly updated."}
       else
+        flash.now[:danger] = "Update was unsuccessful. Check out the error(s) below and please try again."
         format.html {render action: "edit"}
       end
     end
@@ -58,6 +72,20 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user) .permit(:name, :email, :password, :password_confirmation, :password_digest)
+    params.require(:user) .permit(:name, :email, :password, :password_confirmation)
+  end
+
+  # confirms a user is signed in
+  def signed_in_user
+    unless signed_in?
+      flash[:danger] = "Please sign in to access that page."
+      redirect_to signin_url
+    end
+  end
+
+  # confirms the correct user
+  def correct_user
+    flash[:danger] = "You are not authorized to view that page."
+    redirect_to(root_url) unless current_user?(@user)
   end
 end
