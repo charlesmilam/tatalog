@@ -1,40 +1,36 @@
-<div class="row" data-equalizer>
+<div class="row">
 <div class="large-4 columns">
   <div class="panel radius">
     <img src="https://s3.amazonaws.com/tatalog-milam-dev/tattoos/images/noavatar.png">
-    <h3><%= @user.name %></h3>
-    <p><%= @user.email %></p>
+    <h2><%= @user.name %></h2>
     </ul>
   </div>
 </div>
 <div class="small-12 large-8 columns">
-  <ul class="small-block-grid-2">
+  <ul class="small-block-grid-2" data-equalizer>
     <% @tattoos.each do |tat| %>
       <% @tat = tat %>
-      <li>
-        <ul class="pricing-table radius" data-equlizer-watch>
-          <li class="title"><a class="th radius" href=<%= user_tattoo_path(@user.id, tat.id) %>> <img src=<%= tat.image.url(:small) %>></a></li>
-          <!-- <li class="price">.99</li> -->
+      <li >
+        <ul class="pricing-table radius" >
+          <li class="title" data-equalizer-watch><a class="th radius" href=<%= user_tattoo_path(@user.id, tat.id) %>> <img src=<%= tat.image.url(:small) %>></a></li>
           <li class="price"><%= tat.name.length > 15 ? tat.name[0..15] + "..." : tat.name %></li>
           <li class="bullet-item">Artist: <%= @artists_info.find {|a| a[:id] == tat.artist_id}[:name] %></li>
           <li class="bullet-item">Shop: <%= @shops_info.find {|s| s[:id] == tat.shop_id}[:name] %></li>
           <li class="bullet-item">Why: <%= tat.why %></li>
           <li class="bullet-item">Date Received: <%= tat.when %></li>
-          <li class="cta-button">
-            <a class="button round fave-btn" href="#"
-               data-tat-id="<%= tat.id %>"
-            >
+          <li class="cta-button" >
+            <a class="button round fave-btn" href="#" data-tat-id="<%= tat.id %>">
               Favorite it!
             </a>
           </li>
         </ul>
       </li>
-  <% end %>
+    <% end %>
   </ul>
-  </div>
 </div>
+
 <script type="text/javascript">
-  $(document).on("click", ".fave-btn", function(e){
+  $(".pricing-table").on("click", ".fave-btn", function(e){
     e.preventDefault()
     var tatId = $(this).data('tat-id')
     var elem = $(this)
