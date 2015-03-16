@@ -1,0 +1,25 @@
+/* line 1, /home/scruffy/git/tatalog/app/assets/stylesheets/pages.css.scss */
+.shadow {
+  position: relative;
+  box-shadow: 1px 7px 7px rgba(0, 0, 0, 0.3);
+}
+
+/* line 6, /home/scruffy/git/tatalog/app/assets/stylesheets/pages.css.scss */
+.shadow:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  bottom: 0px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  height: 50%;
+  border-radius: 100%;
+}
+
+/* line 19, /home/scruffy/git/tatalog/app/assets/stylesheets/pages.css.scss */
+img {
+  margin-bottom: 30px;
+  border-radius: 3px;
+}
