@@ -16820,10 +16820,6 @@ return jQuery;
 
 
 }).call(this);
-(function() {
-
-
-}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -16842,6 +16838,9 @@ return jQuery;
 
 
 
+
 $(function(){ 
-  $(document).foundation(); 
+  $(document).foundation({
+    equalizer: {equalize_on_stack: true} 
+  }); 
 });
