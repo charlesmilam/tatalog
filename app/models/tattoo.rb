@@ -9,7 +9,7 @@ class Tattoo < ActiveRecord::Base
                       thumb: "100x100>",
                     },
                     s3_protocol: "https",
-                    default_url: "https://s3.amazonaws.com/tatalog-milam-dev/misc/images/noavatar.png"
+                    default_url: "https://s3.amazonaws.com/tatalog-milam-dev/misc/images/noimage.png"
 
   belongs_to :user
   belongs_to :artist
