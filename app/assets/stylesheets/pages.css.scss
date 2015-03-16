@@ -1,0 +1,22 @@
+.shadow {
+  position: relative;
+  box-shadow: 1px 7px 7px rgba(0, 0, 0, 0.3)
+}
+
+.shadow:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+  bottom: 0px;
+  left: 10%;
+  right: 10%;
+  width: 80%;
+  height: 50%;
+  border-radius: 100%;
+}
+
+img {
+  margin-bottom: 30px;
+  border-radius: 3px;
+}

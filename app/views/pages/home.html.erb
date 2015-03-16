@@ -1,7 +1,8 @@
 <div class="row" data-equalizer>
   <div class="large-4 columns">
-    <!-- <img src="http://placehold.it/400x300&text=[img]"/> -->
+    <%= image_tag("organize.png", class: "radius shadow") %>
     <div class="panel radius" data-equalizer-watch>
+      
       <h3>Organize...</h3>
       <p>...your ink. Upload an image of your tattoo. Add information, such as
       the artist, the shop where you got the tattoo, or the inspiration behind your
@@ -11,8 +12,9 @@
   </div>
   
   <div class="large-4 columns">
-    <!-- <img src="http://placehold.it/400x300&text=[img]"/> -->
+    <%= image_tag("browse.png", class: "radius shadow") %>
     <div class="panel radius" data-equalizer-watch>
+      
       <h3>Browse...</h3>
       <p>...other user's tattoos. Tag your favorites. View most favorited tattoos, 
       artists, and shops.</p>
@@ -20,8 +22,9 @@
   </div>
   
   <div class="large-4 columns">
-    <!-- <img src="http://placehold.it/400x300&text=[img]"/> -->
+    <%= image_tag("signup.png", class: "radius shadow") %>
     <div class="panel radius" data-equalizer-watch>
+      
       <h3>Ready to get started?</h3>
       <p><%= link_to("Click here", new_user_path) %> to sign up for an account. </p>
       <p>Already signed up? <%= link_to("Click here", signin_path) %> to sign in.</p>
