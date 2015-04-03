@@ -4,17 +4,12 @@
   <%= f.input :name, placeholder: "A name/nickname for the tat" %>
   <%= f.input :artist_id, label: "Artist", prompt: "Artist that performed tattoo", collection: @artists %>
   Your tattoo artist missing? 
-  <%= link_to "Click to add a new artist", new_artist_path %>
-  <%= f.date_field :when %>
-  <!-- <fieldset>
-    <legend style="color: #212121; font-size: 1.6em;">When</legend>
-    <%= f.input :when, hint: "When did you get the tattoo?", label: false,
-        start_year: Date.today.year - 77, end_year: Date.today.year
-    %>
-  </fieldset> -->
+  <%= link_to "Click to add a new artist", new_artist_path, class: "new-tat" %>
+  <%= f.label "When" %>
+  <%= f.date_field :when, prompt: "When did you get the tattoo? in mm/dd/yyyy format" %>
   <%= f.input :shop_id, label: "Shop", prompt: "Shop where you received tattoo", collection: @shops %>
   Your shop missing?
-  <%= link_to("Click to add a new shop", new_shop_path) %>
+  <%= link_to "Click to add a new shop", new_shop_path, class: "new-tat" %>
   <%= f.input :why, placeholder: "Why did you get this tattoo?" %>
   <%= f.button :submit, class: "round" %>
 <% end %>
