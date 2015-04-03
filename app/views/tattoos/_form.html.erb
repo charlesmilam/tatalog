@@ -5,12 +5,13 @@
   <%= f.input :artist_id, label: "Artist", prompt: "Artist that performed tattoo", collection: @artists %>
   Your tattoo artist missing? 
   <%= link_to "Click to add a new artist", new_artist_path %>
-  <fieldset>
+  <%= f.date_field :when %>
+  <!-- <fieldset>
     <legend style="color: #212121; font-size: 1.6em;">When</legend>
     <%= f.input :when, hint: "When did you get the tattoo?", label: false,
         start_year: Date.today.year - 77, end_year: Date.today.year
     %>
-  </fieldset>
+  </fieldset> -->
   <%= f.input :shop_id, label: "Shop", prompt: "Shop where you received tattoo", collection: @shops %>
   Your shop missing?
   <%= link_to("Click to add a new shop", new_shop_path) %>

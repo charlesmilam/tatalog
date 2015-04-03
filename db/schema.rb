@@ -14,10 +14,10 @@
 ActiveRecord::Schema.define(version: 20150314191645) do
 
   create_table "artists", force: :cascade do |t|
-    t.string   "nick"
-    t.string   "email"
+    t.string   "nick",       limit: 255
+    t.string   "email",      limit: 255
     t.integer  "shop_id"
-    t.string   "url"
+    t.string   "url",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
@@ -34,19 +34,19 @@ ActiveRecord::Schema.define(version: 20150314191645) do
   add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
 
   create_table "shops", force: :cascade do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.string   "url"
+    t.string   "name",       limit: 255
+    t.string   "address",    limit: 255
+    t.string   "city",       limit: 255
+    t.string   "state",      limit: 255
+    t.string   "zip",        limit: 255
+    t.string   "url",        limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "tattoos", force: :cascade do |t|
     t.integer  "user_id"
-    t.string   "name"
+    t.string   "name",               limit: 255
     t.integer  "artist_id"
     t.date     "when"
     t.integer  "shop_id"
@@ -59,9 +59,12 @@ ActiveRecord::Schema.define(version: 20150314191645) do
     t.datetime "image_updated_at"
   end
 
+  add_index "tattoos", ["artist_id"], name: "index_tattoos_on_artist_id"
+  add_index "tattoos", ["shop_id"], name: "index_tattoos_on_shop_id"
+
   create_table "users", force: :cascade do |t|
-    t.string   "name"
-    t.string   "email"
+    t.string   "name",            limit: 255
+    t.string   "email",           limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "password_digest"
